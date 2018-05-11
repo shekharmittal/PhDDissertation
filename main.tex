@@ -1,0 +1,131 @@
+\documentclass[PhD, double]{uclathes}
+
+%\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage[flushleft]{threeparttable}
+\usepackage{enumerate}
+
+%[toc,page]
+%titletoc adds Appendix to the beginning of heading in TOC
+%\usepackage[title]{appendix}
+\usepackage[titletoc,toc,page]{appendix}
+%\renewcommand{\appendixname}{SomeName}
+%\renewcommand{\appendixpagename}{SomeName}
+%\renewcommand{\appendixtocname}{SomeName}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\usepackage{lscape}
+\usepackage{ulem} %for underlining
+%\usepackage{subcaption}
+\usepackage{color,hyperref}
+\usepackage[sectionbib,round]{natbib}
+\usepackage{chapterbib}  
+\usepackage{tikz}
+
+
+\usetikzlibrary{arrows}
+
+\usepackage{mathtools}
+\usepackage{amsfonts, graphics, amssymb, amsthm, eqnarray}
+
+
+% Shekhar entered packages
+\usepackage{array} %to hide specific columns
+\newcolumntype{H}{>{\iffalse}c<{\fi}@{}} %to hide specific columns in a table
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{color} %to define colors in hyperlink setup
+\usepackage{rotating}
+\usepackage{chngcntr} % This package is used to renumber figures in the appendix
+\usepackage{subfig} % to create a grid of graphs
+\usepackage[titletoc,title]{appendix} %to define the environment appendices
+\usepackage{xcolor}
+\usepackage{setspace}
+%\onehalfspacing
+\usepackage[notbib, nottoc]{tocbibind} %this should ensure inclusion of bibliography in the 
+
+\usepackage{booktabs} % For formal tables
+\usepackage{paralist} %for compactitem list
+\usepackage{tfrupee}
+\usepackage[noabbrev]{cleveref}
+
+%\usepackage{pdfsync}
+%\usepackage{siunitx}
+\synctex=1
+
+\setcitestyle{authoryear,open={(},close={)}}
+
+
+%\usepackage{rotfloat}
+\usepackage{float}
+\usepackage[capposition=top]{floatrow} % for floatfoot
+
+\DeclareMathOperator*{\plim}{plim}
+
+\usepackage{pdfpages}
+
+%%use square brackets for backlinks
+%\renewcommand*{\backref}[1]{[#1]}
+\newcommand{\green}[1]{\textcolor{black}{#1}}
+\usepackage[textsize=small,obeyFinal,colorinlistoftodos]{todonotes}
+\newcommand{\smalltodo}[2][]
+{\todo[caption={#2}, #1]
+{\begin{spacing}{0.5}#2\end{spacing}}}
+\newcommand{\pni}{{\par{\noindent}}}
+
+\usepackage{verbatim} % for multiline commenting
+
+
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+\definecolor{darkviolet}{rgb}{0.58, 0.0, 0.83}
+\definecolor{electricindigo}{rgb}{0.44, 0.0, 1.0}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=black}
+
+%\allowdisplaybreaks
+\newtheorem*{myprop}{Proposition}
+
+
+\def\newblock{\hskip .11em plus.33em minus.07em}
+\input {prelim}                           % preliminary         page info
+\begin {document}
+\makeintropages
+
+\chapter{VAT in Emerging Economies: Does Third Party Verification Matter?}
+\input {Chapter_1.tex} 
+
+
+\chapter{Who is Bogus? Using One-Sided Labels to Identify Fraudulent Firms from Tax Returns}
+\input {Chapter_2.tex}                         %
+
+\chapter{Red Tape? The Revenue Impact of the VAT Filing Thresholds}
+\input {Chapter_3.tex}                         %
+
+\appendix
+%Appendices
+\chapter{Appendix ``VAT in Emerging Economies: Does Third Party Verification Matter?"}
+\input{Appendix_Chapter1.tex}
+
+\chapter{Appendix ``Return Forms"}
+\input{Appendix_Overall.tex}
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{plainnat}
+\bibliography{bib_all}
+
+
+\end {document}
