@@ -32,7 +32,7 @@ The key contributions of our work are:
 \item A proposed mechanism through which bogus firms may operate in a low compliance, emerging economy.
 \end{compactitem}
 
-The remainder of this paper is structured as follows. In \cref{sec:literature} we review the relevant literature both in economics and machine learning. In \cref{sec:vat} we describe the basics of VAT functioning. In \cref{sec:mechanism} we propose the mechanism that we think is behind the existence of bogus firms. \Cref{sec:system-description} describes the classification system we construct. In \cref{sec:evaluation} we evaluate the performance of our system and present the results of our model. Finally, in \cref{sec:conclusion} we describe our future goals.
+The remainder of this paper is structured as follows. In \cref{sec:literature} we review the relevant literature both in economics and machine learning. In \cref{sec:vat} we describe the basics of VAT functioning. In \cref{sec:mechanism} we propose the mechanism that we think is behind the existence of bogus firms. \Cref{sec:system-description} describes the classification system we construct. In \cref{sec:evaluation} we evaluate the performance of our system and present the results of our model. Finally, in \cref{sec:2-conclusion} we describe our future goals.
 
 
 \section{Related Work}
@@ -81,7 +81,7 @@ A few key observations need to be highlighted. First, firm A and firm D do not n
 \section{System Description}
 \label{sec:system-description}
 \subsection{Data}
-\label{subsec:data} 
+\label{subsec:2-data} 
 
 Our dataset has almost 3 years of quarterly VAT returns from the National Capital Territory of Delhi, India from 2012-13 to 2014-15 (with personal identifying information removed). This includes consolidated returns as well as transaction level information filed by an unbalanced panel of firms, $|Firms|=315,191$, and a list of firms that were previously found to be bogus by the tax authority, $|inspected \& bogus|=538$.  Returns are filed quarterly so we should ideally have data from 12 quarters. However, for the fourth quarter of 2012-13 the transaction level records are unusable and therefore we drop that quarter from our analysis, which leaves us with data from 11 quarters. We denote these as follows. $Returns_{f,t}$ for firm $f\in Firms$ in quarter $t \in Q(f)\subseteq Q \equiv \{1,2,3,5,...12\}$, where firm $f$ operated in quarters $Q(f)$ (t=4 was dropped). Every firm is either bogus or legitimate and this doesn't change over time:$class_f \in \{bogus,legit\}$.\footnote{This is an assumption, but we have good reason to believe it from discussions with the tax authority and since there are sanctions against owners of bogus firms that are found, so owners would not use their legitimate companies for this purpose.} Some firms were inspected: $inspected_f \in \{True,False\}$ and of those inspected some were bogus and some legitimate, but this is recorded in our data only for the ones that were found to be bogus.\[ label_f =y_f= 
      \begin{cases}
@@ -309,7 +309,7 @@ Point-in-time simulation also enables us to see how much additional revenue coul
 
 
 \section{Future Work and Conclusion}
-\label{sec:conclusion}
+\label{sec:2-conclusion}
 The purpose of this paper is to assess if a machine learning tool can be effective in catching bogus firms, in reducing the effort required by tax inspectors, and in eventually increasing tax collections. By creating a model from VAT returns from the state of Delhi, India and by analyzing the performance of the model, we provide evidence that targeting inspections based on a ML model could be highly beneficial even in a low compliance high evasion setting. Our results indicate that by using our tool the tax administration can prevent fraud up to \$15-45 million. Given that such data exists in many tax jurisdictions and that anecdotal evidence suggests that such false paper trails are a common problem, our work should have high policy relevance both within India and elsewhere.
 
 The field level efficacy of the results that we have described in this paper needs to be investigated. We need to evaluate whether our work reduces the effort required by tax inspectors, and more importantly, does it improve revenue collections. A rigorous way to assess the reduction in administrative effort due to our model would be to target future inspections by comparing the recommendations of our model with a list of recommendations prepared by a team of tax officials and then inspecting the firms recommended by each and comparing performance. We are working with the Delhi tax authority to implement this.

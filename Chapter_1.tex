@@ -69,7 +69,7 @@ However, focusing on averages masks significant heterogeneity in the effect of t
 % om> 2017-02-23T19:31:35.273Z:
 %Second, it is widely believed that since retailers are selling primarily to final customers, the third party verification mechanism breaks down for them since their sales cannot be verified by third party verification. However, we find that despite classifying themselves exclusively as retailers, firms do show substantial amount of sales to registered firms. The proportion is 43\%  on average for self-described retailers (the corresponding figure is 78\% for self-reported exclusive wholesalers). 
 %Second, we document significant mismatches between seller and buyer reports despite improved information. Matching at the tax identification number level (which is the most generous specification possible) yields 4-10\% unmatched entries. 
-The remainder of this paper is as follows: \Cref{sec:1-literature} reviews the relevant literature, \cref{sec:conceptual} summarizes  a theoretical framework for understanding the empirics as well as some background on the VAT in Delhi and the policy change of interest, \cref{sec:data} describes the data, and \cref{sec:empirical_strategy} describes the empirical strategy and the assumptions underlying our causal claims. \Cref{sec:results} presents our results. \Cref{sec:mechanisms} explores likely mechanism for our reduced form results and \cref{sec:conclusion} concludes.
+The remainder of this paper is as follows: \Cref{sec:1-literature} reviews the relevant literature, \cref{sec:conceptual} summarizes  a theoretical framework for understanding the empirics as well as some background on the VAT in Delhi and the policy change of interest, \cref{sec:1-data} describes the data, and \cref{sec:empirical_strategy} describes the empirical strategy and the assumptions underlying our causal claims. \Cref{sec:1-results} presents our results. \Cref{sec:mechanisms} explores likely mechanism for our reduced form results and \cref{sec:1-conclusion} concludes.
 
 
 % Figure 8: proportion of sales to registered firms is higher for wholesalers relative 
@@ -188,11 +188,11 @@ From Q1 of 2012-13 (year 3 of our data), firms were required to file two additio
 Annexure 2B recorded all firm sales in the past tax period disaggregated at the registered buyer level for each tax rate. Annexure 2A recorded purchases  disaggregated at the seller level for each tax rate (refer to \cref{sec:annexure_form}). All firm level entries in Forms 2A and 2B had to include the tax IDs of all registered firms involved in the transaction thus enabling the tax authority to easily cross-check reports. The only across firm aggregation that was permissible was for unregistered firms (i.e. firms with no tax identification numbers which includes final consumers). The new forms meant that for the first time the tax authority could cross-check buyer and seller reports (for dis-aggregated transactions) from the submitted returns alone (i.e. without having to resort to an audit).\footnote{Recall that before the policy change (from 2005-2012) firms did not have to provide firm-level reports of purchases or sales but instead were only required to report total sales aggregated across all firms and correspondingly total purchases aggregated across all registered firms (and the corresponding purchase amount from unregistered firms). They were required to maintain firm-level information for their own records in case of an audit - though based on the audit notice data that we have, probability of getting audited is extremely low (less than 1\%).}
 
 \section{Data}
-\label{sec:data}
+\label{sec:1-data}
 We have detailed tax data from the government of New Delhi for 5 years (from 2010 to 2015) which we describe in detail below.
 
 \subsection{VAT Returns}
-\label{subsec:data-returns}
+\label{subsec:1-data-returns}
 We have anonymized VAT returns for the entire universe of registered firms for 5 years - 2010-11 (Y1), 2011-12 (Y2), 2012-13 (Y3), 2013-14 (Y4), 2014-15 (Y5). Each firm is assigned a unique identifying number so we can follow a firm over time as well as track its presence in other firms' returns (from Y3 onwards). However, anonymization implies
 that we cannot link the firms to any other publicly available information on the firms.
 
@@ -211,19 +211,19 @@ We have detailed information on the line items in the consolidated returns (form
 Items (1)-(4) above are further broken down by tax-rates (since different goods are taxed at different rates) and we also observe some additional information such as penalties, past tax credits and liabilities. 
 
 \subsection{Firm Characteristics}
-\label{subsec:data-dp}
+\label{subsec:1-data-dp}
 In addition to tax return information we also have basic information provided by the firm at the time of registration. We observe the date of registration, the revenue ward (i.e. the broad, largely, geographic
 categorization of the firm for revenue purposes), the nature of business (e.g. manufacturer, wholesaler, retail trader, exporter, importer), the legal status of the business (e.g. proprietorship, private limited company, public sector undertaking, government corporation) as well as the other tax schemes and acts the firm is
 subject to (e.g. the central excise act, service tax) and whether a firms is registered for international trade (import or export).
 \todo[inline, color=green, caption={Question from AM}]{Can we use this extra information to better classify some of the retailers}
 
 \subsection{Audit Notices}
-\label{subsec:data-audit}
+\label{subsec:1-data-audit}
 We have information (for Y4 and Y5) audit notices sent out by the tax authority. These dated notices identify the targeted firm and are usually the first step in a sometimes lengthy audit procedure. We use this information to quantify the extent to which the tax authority checks on problematic returns.
 
 \subsection{Sample}
 \label{subsec:sample}
-We limit our analysis to firms present throughout the period of study. This sub-sample comprises 85\% of all firms present in year 1 and 95\% of all tax revenues in year 1. Thus, the sample consists of the near universe of revenue generating firms (see \cref{fig:vatdeposited-all} and \cref{fig:vatdeposited-alwayspresent}). We do not, therefore, address the effect of the policy on firm registration and exit decisions. We restrict our primary sub-sample further to firms that are exclusively wholesalers or retailers as reported on their VAT registration forms.\footnote{Given the previous selection rule this means we are  restricting ourselves to firms registered in or before 2010-11.} These comprise 27\% of all firms present in year 1 and 44\% of all tax revenues in year 1.\footnote{In terms of year 5, these firms comprise 19\% of the sample but still contribute 43\% of the tax revenues.} However, we use larger sub-samples for some specifications which we describe in greater detail in section \ref{sec:results}. In addition, we also provide additional data description in \cref{sec:overall_analysis}.
+We limit our analysis to firms present throughout the period of study. This sub-sample comprises 85\% of all firms present in year 1 and 95\% of all tax revenues in year 1. Thus, the sample consists of the near universe of revenue generating firms (see \cref{fig:vatdeposited-all} and \cref{fig:vatdeposited-alwayspresent}). We do not, therefore, address the effect of the policy on firm registration and exit decisions. We restrict our primary sub-sample further to firms that are exclusively wholesalers or retailers as reported on their VAT registration forms.\footnote{Given the previous selection rule this means we are  restricting ourselves to firms registered in or before 2010-11.} These comprise 27\% of all firms present in year 1 and 44\% of all tax revenues in year 1.\footnote{In terms of year 5, these firms comprise 19\% of the sample but still contribute 43\% of the tax revenues.} However, we use larger sub-samples for some specifications which we describe in greater detail in section \ref{sec:1-results}. In addition, we also provide additional data description in \cref{sec:overall_analysis}.
 
 \todo[inline,caption={Firm Exit},color=green]{We Should Look at Firm Exit in our sample at Some Point.}  
 
@@ -261,7 +261,7 @@ y_{it}=\alpha_i+\nu_t+\gamma_t*\nu_t*\mathbb{I}\{\text{Wholesaler}_{i}\}+\epsilo
 Where, in addition to the firm-fixed effects $\alpha_i$ and the set of time-dummies (represented here in the interest of brevity and clarity by $\nu_t$ here), we now include a full set of time-dummies interacted with the wholesaler dummy (represented here as $\nu_t*\mathbb{I}\{\text{Wholesaler}_i\}$). The coefficients $\{\gamma_s\}_{s \in S }$\footnote{S denotes the set of post-policy time periods.} are the parameters of interest and are intended to capture the differential effect of the policy on wholesalers (relative to retailers) in period s relative to the period immediately prior to the policy's introduction. Finally, in all analysis standard errors are clustered at the firm level. In \cref{subsec:falsification-test} we present additional robustness in quarterly results by adding $\text{Pre}_{it}$ dummy which is equal to 1 for tax quarters 7 and 8 i.e. just before the introduction of the policy.
 
 \section{Results}
-\label{sec:results}
+\label{sec:1-results}
 
 \subsection{Description: Wholesalers vs Retailers}	
 \label{subsec:descripton_treatment_control}
@@ -573,7 +573,7 @@ total sales only in the post-policy period. In the pre-policy phase firms were o
 The results in \cref{tbl:group1-diff-in-diff-in-diff} show that the treatment effect of the automation policy is stronger for wholesale firms who sell more to registered firms. Somewhat surprisingly, retailers with a larger fraction of sales to registered firms do not see any differential increases in tax remitted (or tax credits or output tax liability). This finding is again consistent with the first three explanations and high sales to registered firms is definitely not a feature of the actual transactions that retailers carry out.
 
 \section{Conclusion} 
-\label{sec:conclusion} 
+\label{sec:1-conclusion} 
 In this paper we evaluate the effect of a policy reform that implemented a key pillar of the VAT system -- increasing the tax authority's ability to easily cross-check buyer and seller reports against each other. Under the previous regime such cross-checks could only be carried by instituting a rare, lengthy and expensive audit process. We interpret this change in policy as one that increased the number of transactions that were effectively third-party verifiable by the tax authority. We evaluate the effect of this policy change in the Indian state of Delhi -- a low compliance environment with a large number of
 transactions being made to unregistered firms (i.e firms that do not file returns with the tax authority) -- to shed light on the effectiveness of third-party verification in an emerging economy.
 
