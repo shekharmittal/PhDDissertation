@@ -8,7 +8,7 @@ In this paper, we implement and evaluate an ML algorithm on the universe of tax 
 
 We overcome several non-standard facets of the data and of our problem. First, our dataset was not constructed for the purpose of labeling for an algorithm and is, therefore, not a representative sample of the population. In our case, a small fraction of all firms are inspected, those suspected by the tax authority, and so there is a problem of selective labels \cite{lakkaraju2017selective}. On top of that, the tax authority only records bogus firms that were inspected, caught and canceled, but not firms that were inspected and found to be legitimate. Therefore, we are unable to distinguish between firms that were inspected and found to be legitimate and firms that were never inspected. We refer to this problem as that of one-sided labels, since no firm can be definitively labeled as legitimate (see \cref{fig:onesidedlabel}). The unlabeled firms are (at least weakly) less likely to be bogus than those labeled bogus, and we leverage this difference in class distribution to train a classifier. Moreover, the authority has never identified all the bogus firms in the stock of existing VAT firms, so we want to predict the labels of all unlabeled firms. Therefore, a standard classification approach with a training set and out-of-sample prediction is not viable. We employ a form of cross-validation to use the entire dataset as a training set and make predictions on all firms in the dataset not known to be bogus.
 
-\begin{figure}
+\begin{figure}[h]
   \includegraphics[width=.9\textwidth, page=5]{graphs/StylizedExample_New2.pdf}
   \caption{One sided labels}
   \label{fig:onesidedlabel}
@@ -72,7 +72,7 @@ Firm B then can sell the input credit it now has to firm A by showing a sale of 
 
 A few key observations need to be highlighted. First, firm A and firm D do not need to be in the same transaction chain. It is not necessary for the eventual chain of transactions to be circular. Firm C does not benefit from the bogus transactions and need not even know about them.\footnote{We include firm C to highlight that such transactions can co-exist around genuine transactions.} Second, bogus firm B can make sales to any firm which is in need of input credits. It does not necessarily need to make such sales to firm A which is at the beginning of the transaction chain. Third, we believe that once detected it is not complicated to verify that firm B is bogus. It is a fake firm which should not exist physically at the address submitted to the tax authority.\footnote{In subsequent field work we can test this assumption} Therefore, there is no need to rigorously analyze its business related paperwork (high effort) and a visit to the location (relatively low effort) should be sufficient. Finally, after identifying bogus firm B, the revenue can only be recovered if the authority pursues firm A and reverses the input credit that firm A has claimed. Any kind of a penalty only on firm B does not recoup the revenue loss. We now describe the design of our system.
 
-\begin{figure}
+\begin{figure}[p]
   \includegraphics[width=1\columnwidth, page=4]{graphs/StylizedExample_New2.pdf}
   \caption{An example showing how bogus firms facilitate tax evasion}
   \label{fig:bogus-mechanism2}
@@ -222,7 +222,7 @@ Of our top 400 most suspicious firms, we find 75\% to be actually bogus. Of the 
 From tax authority's perspective, we want to maximize expected revenue captured, and not merely the likelihood of finding a bogus firm. Small firms will only account for a small amount of tax evaded, and larger bogus firms will account for a much larger amount.\footnote{More precisely, this is determined by the amount of tax input credits claimed, the \$40 in the stylized example above.} We would therefore want a different ranking, in descending order of expected recovered revenue and not of model-predicted likelihood of being bogus. We use the following procedure to make such recommendations.
 
 \begin{figure}
-  \includegraphics[width=0.35\textwidth]{graphs/PerformanceAllData_v2.png}
+  \includegraphics[width=0.5\textwidth]{graphs/PerformanceAllData_v2.png}
   \caption{Model performance on top 1000 recommendations}
   \label{fig:AllDataPerformanceTop1000}
   \floatfoot{\footnotesize Using cross-validated predictions on all time periods. The x value is the rank N of suspicious firms and the y value is the number of firms out of those N that are bogus. The dashed y=x line indicates perfect performance, i.e. every firm inspected is bogus. Model performance is near-perfect for the first 250 predictions, then starts to level off.}  
