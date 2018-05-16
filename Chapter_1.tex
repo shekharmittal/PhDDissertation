@@ -74,7 +74,7 @@ This interpretation of the model implies that collusion, and hence tax-evasion u
 \subsection{Illustrative Example}
 \label{subsec:background}
 
-\begin{figure}[h] 
+\begin{figure}[t!] 
 %\centering
  \includegraphics[width=.9\textwidth]{graphs/example_4.pdf}
 \caption{Toy Model}
@@ -92,7 +92,7 @@ Second, as is standard in VAT systems, each firm has incentives to under-report 
 
 If, however, M can sell to unregistered firms, then the tax authority can no longer third-party verify all of its sales. This failure of third-party verification in turn opens up the possibility of collusion between W and M.  For instance, if M sells \$ 60 worth of goods to unregistered firms (U), it can conceal this transaction completely since it cannot be verified by third-party reporting. This in turn provides M an incentive to collude with W to reduce reported purchases (so as to ensure that reported sales are not lower than reported purchases). For instance, they can agree upon a purchase amount of \$50. This reduces W's tax liability to \$5 relative to the no collusion scenario. This agreement does reduce M's input tax credit by \$5 as well. However, since M only reports half his sales, the decline in her output tax more than off-sets the decline in her input tax credit so that her overall tax liability falls (in this case by $50\%$) from \$2 to \$1.\footnote{Since M is not reporting the sale to U, it can give the tax-break to U by not collecting the tax or it can withhold the tax but not remit it. Anecdotally, we are aware of both the scenarios occurring in Delhi and we are indifferent between them.} (Refer to \cref{tbl:evasion-desc})
 
-\begin{table}[h]
+\begin{table}[t]
 %\footnotesize
 \begin{threeparttable}
 \caption{Evasion in Toy Model}
@@ -116,7 +116,7 @@ Actual columns indicate the true values of sales or purchases. Reported columns 
 
 Continuing with the example as above we can consider three different scenarios depending upon whether M and R collude.  First, we assume that there is no collusion between R and M and R reports sales truth-fully. In this case, R sells output to final consumers for \$72 collecting \$7.2 in taxes of which \$6 are off-set by his input tax credit so that \$1.2 is remitted to the authority. Second, consider the case where R and M do not collude but R decides unilaterally to under-report sales to C since such sales are not subject to third-party verification. In this scenario, R can in principle report any amount of sales to C but perhaps recognizing that zero (or negative) value-added in the final step may invite further scrutiny, will report the smallest amount about \$60 he is comfortable with to the tax authority. Third, M and R have incentives to collude so that the entire transaction can be carried out without involving another party U. In particular, M and R can agree to make \$60 worth of transactions on-the-books and remaining \$60 off-the-books.
 
-\begin{figure}[h] 
+\begin{figure}[t] 
 \caption{Third party verification}
 \label{fig:matching_model}
 %\centering
@@ -213,7 +213,7 @@ Where, in addition to the firm-fixed effects $\alpha_i$ and the set of time-dumm
 \label{subsec:descripton_treatment_control}
 Our main sample comprises of 32,979 retailers and 19,515 wholesalers who file a return during the entire period of our study.\footnote{This is when returns are aggregated to the annual level. We discuss the sample size when we consider quarterly frequency regressions in \cref{sec:quarterlyresults}.} Pre-policy means in year 1 along with changes in means over the pre-policy period for the two groups are shown in \cref{tbl:group1_summary_real}. In general, wholesalers are considerably larger than retailers; we provide additional data description in \cref{sec:overall_analysis} and discuss evidence of parallel trends in \cref{subsubsec:evidence-parallel-trends}.
 
-\begin{table}[h]
+\begin{table}[t]
 \footnotesize  
 %\scriptsize  
 \begin{threeparttable}
@@ -252,11 +252,11 @@ Summary statistics for selected variables in Year 1. Amounts are in million rupe
 As mentioned earlier, these two groups account for a substantial part of VAT collections. In year 1, both groups remitted 44\% (\rupee 46.7 billion) of total VAT collections and the corresponding number is 43\% for the last year of the study. In total, they account for 55.5\% of the increase in the VAT collections from the sample of firms present in each of the 5 years. \Cref{fig:group1-pretrends} and \cref{fig:group1-pretrends-quarterly} show the trends of VAT remitted at the annual as well as the quarterly level for the two groups (along with point-wise 95\% confidence intervals).
 
 
-\begin{figure}[h] 
+\begin{figure}[t] 
 \caption{Wholesalers vs Retailers: Annual trends (in real terms) with confidence intervals}
 \label{fig:group1-pretrends}
 %\centering
-\includegraphics[width=.9\textwidth]{graphs/MeanMoneyDeposited_annual_with_confidenceintervals_Real.pdf}
+\includegraphics[width=.8\textwidth]{graphs/MeanMoneyDeposited_annual_with_confidenceintervals_Real.pdf}
 \floatfoot{\footnotesize $N_W=19515, N_R=32979$. Average VAT remitted is in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1. Pointwise 95\% CI included. Third party verification started in year 3.}
 \end{figure}
 
@@ -273,7 +273,7 @@ This gives us some confidence that the key (untestable) assumption of parallel t
 
 \Cref{tbl:group1-levels} shows the results of the difference-in-difference regressions at the firm-annual level. In column (1) the outcome is a dummy variable for whether the firm remits any tax. The proportion of wholesaler firms depositing any tax goes down by a statistically significant 2\%, though this is a relatively modest decrease of 4\% from a baseline of 53\%. Next, VAT remitted (column 2) increases by a substantively (and statistically) significant \rupee 0.38m for wholesale firms. This is an increase of 29\% over a year 1 mean of \rupee 1.31m. The wholesalers response is particularly notable since it is in start contrast to the retailer response -- for retailers total tax remitted actually decreases post-policy. These result are consistent with the conceptual framework outlined in \cref{sec:conceptual}. Wholesalers who have higher third-party verifiable income and interact with more registered firms respond much more to the improvement in third-party verification relative to retailers.
 
-\begin{table}[h]
+\begin{table}[t]
 \footnotesize
 \scalebox{0.9}{
 \begin{threeparttable}
@@ -307,9 +307,9 @@ As a robustness check, \cref{tbl:event-falsification-table} repeats the regressi
 
 \todo[inline, caption={Question from AM}]{Don't we normalize period 8 coefficient to be zero? Ans: This is a different specification}
 
-\begin{figure}[h] 
+\begin{figure}[t] 
 %\centering
-\includegraphics{graphs/MoneyDepositedTrendsTopPercentilePanel_Annual_Real.pdf}
+\includegraphics[width=0.8\textwidth]{graphs/MoneyDepositedTrendsTopPercentilePanel_Annual_Real.pdf}
 \caption{Tax Remitted by top percentile and bottom 99\% of firms}
 \label{fig:money-onepercentile}
 \floatfoot{\footnotesize Notes: This figure plots the total VAT remitted by the panel of top 1\% and the bottom 99\%, in terms of VAT remitted in year 1, of wholesalers and retailers. $N_W=19515,N_R=32979$. Therefore, top 1\% of retailers are 329 firms and top 1\% of wholesalers are 195 firms. Rest of the firms form bottom 99\%. Monetary amounts are in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1.}
@@ -320,7 +320,7 @@ As a robustness check, \cref{tbl:event-falsification-table} repeats the regressi
 We next turn to exploring heterogeneity in our estimates. There are two main reasons for this. First, as we saw in the previous table, there is a significant point mass at zero for tax remitted. This suggests that exploring alternatives to mean regressions may be a useful exercise. Further, \cref{tbl:group1-levels} indicates that while the policy had limited extensive margin effects (i.e. on whether firms remit any tax) there were substantive intensive margin effects, suggesting the the policy may have affected different wholesalers differently.
 
 
-\begin{table}[h]
+\begin{table}[t]
 \footnotesize
 \scalebox{0.9}{
 \begin{threeparttable}
@@ -349,7 +349,7 @@ Robust standard errors in parentheses, clustered at firm level. $N_W=195,N_R=329
 
 We begin by examining the evolution of tax remitted for different sub-groups of wholesalers and retailers. In particular, we partition each group into two sub-groups ranked according to tax remitted in the first year of the study -- the top 1\% and the remaining 99\%.\footnote{We use tax remitted as the stratifying variable because it is also the variable used by the authority to determine firms that will be examined by the special ward in charge of large tax-payers.} The results are graphed in \cref{fig:money-onepercentile}; two points are worth noting. First, tax remits remain relatively stable for the bottom 99\% of wholesale firms as compared to the top 1\%. In contrast, tax remits for retail firms as a whole (both in the 1\% as well as in the 99\% sub-groups) are relatively stable throughout the study period. This analysis suggests that it is worthwhile to examine heterogeneity in treatment effects across different percentiles of the baseline outcome distribution.\footnote{A natural estimation method here would be to use quantile regressions. We are currently working on implementing a stable quantile regression model with fixed effects on our data.} In \cref{tbl:group1-toppercentile,tbl:group1-bottom99} we present the regression adjusted comparisons of \cref{fig:money-onepercentile}. There are at least three points of interest. First, the policy has no differential effects on wholesalers relative to retailers in the bottom 99\% sub-sample. Second, the response of the top 1\% of wholesalers is sharply different from that of the top retailers. For the top retailers, input credits increase and output tax declines modestly\footnote{The output tax response is not statistically significant at conventional levels.} so that overall tax remits fall by $22.9\%$ (relative to a top 1\% retailer baseline of \rupee 52.55m) after the policy. In stark contrast, input credits decline and output tax liability increases for wholesalers (relative to top retailers) so that post-policy overall tax deposited rises by $34\%$ (relative to the baseline mean).
 
-\begin{table}[h]
+\begin{table}[t]
 \footnotesize
 \scalebox{0.9}{
 \begin{threeparttable}
@@ -377,7 +377,7 @@ Robust standard errors in parentheses, clustered at firm level. $N_W=19,320,N_R=
 \end{threeparttable}}
 \end{table}
 
-\begin{figure}[h] 
+\begin{figure}[t!] 
 %\centering
 \includegraphics[width=.8\textwidth]{graphs/HeterogeneityMoneyDeposited_Real.pdf}
 \floatfoot{\footnotesize Notes: This figure plots the difference between wholesalers and retailers for different deciles, based on VAT remitted in the first year. The x axis indicates the decile. Confidence intervals at the 95\% level. $N_W=32979$,$N_R=19515$. Coefficients are in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1.The first group consists of 4 deciles because all the firms in that group do not remit any VAT.}
@@ -393,7 +393,7 @@ differential effects therefore provide some sobering evidence on the effectivene
 
 \todo[inline,caption={Shekhar Size Definition Question},color=green]{SM: I though we defined size by turnover in the baseline year. That seems to be the most acceptable definition no? Also, can we check that the footnote where we use turnover gives us similar results. I know we looked at it at some point.}
 
-\begin{figure}[h] 
+\begin{figure}[t!] 
 %\centering
 \includegraphics[width=.8\textwidth]{graphs/EventStudy-MoneyDeposited-Quarter_TopDecile_Real.pdf}
 \floatfoot{\footnotesize Notes: Graphical event-study analysis of the effect of third party verification policy on wholesalers compared to retailers. Limiting the set of wholesalers and retailers to the top 10\% of each group in terms of VAT remitted in quarter 1. Confidence intervals were constructed with heteroskedasticity-robust standard errors, clustered at the firm level. The coefficient for the wholesale group in the quarter (-1) prior the policy is normalized to zero. The regressions include firm fixed  effects and time effects. The x axis indicates time, with quarterly observations and zero indicates the first year of the third party verification policy. We have 20 quarters of data from 2010-11 to  2014-15. Confidence intervals at the 95\% level. $N_W=1148$,$N_R=1533$. Coefficients are in million rupees, with inflation adjusted to Q1 2010-11 price levels, with \rupee 65 approximately equal to \$1. Pretrends are not statistically significant.}
@@ -409,7 +409,7 @@ There are at least two possible reasons for the differential effects on the larg
 
 \todo[inline, caption={Do better analysis on KCS}, color=green]{Revenue and administrative efficacy of KCS. Do whatever you can think of.}
 
-\begin{table}[h]
+\begin{table}[t!]
 \footnotesize
 \begin{threeparttable}
 \caption{Diff-in-Diff for Top Decile: Wholesalers and Retailers (Annual, Real Terms)}
@@ -437,7 +437,7 @@ Number of Firms & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 \\ \hline \hline
 \section{Mechanism}\label{sec:1-mechanism}
 % \citet{dufloplumber} in her 2017 Ely lecture at the AEA has highlighted the importance of economists getting into the plumbing details of a policy. In this section we show some evidence which sheds light on how the policy was actually executed on the ground. 
 % ;
-\begin{figure}[h] 
+\begin{figure}[t!] 
 %\centering
 \includegraphics{graphs/ProportionSalesRegistered.pdf}
 \caption{Sales to registered firms}
@@ -452,7 +452,7 @@ In this section we explore potential mechanisms for the reduced form results abo
 \label{subsec:registered_sales}
 \Cref{fig:salesregistered} displays quarterly sales to registered firms as a proportion of total sales separately for wholesalers and retailers. The graph is only from quarter 9 (year 3) onwards because in the pre-policy period firms were only required to report a total sales amount without further disaggregation. The lack of a complete series on this variable also limits its use as a direct measure of formality which could be used to examine heterogeneity (although we do present some suggestive evidence below). In addition, changes along the extensive margin for interacting firms also complicates the interpretation (e.g. if the policy led to more firms becoming registered). Over the entire post-policy period wholesale firms made approximately 78\% of their sales to registered firms while the corresponding figure for retail firms is 43\%.
 
-\begin{figure}[h] 
+\begin{figure}[t!] 
 %\centering
 \includegraphics{graphs/ProportionSalesRegisteredTopPercentile_v2_without12.pdf}
 \caption{Sales to registered firms}
@@ -481,7 +481,7 @@ y_{it}=\alpha_i+\nu_t+\beta*\text{Post}_{it}+
 
 In \cref{eq:ddd}, in addition to what we have already described for \cref{eq:basic}, we now also add a variable called $\text{PropRegistered}_i$ which is the proportion of sales declared to be made in quarter 9 (the first quarter immediately after the introduction of the policy). Now the coefficient of interest is $\lambda$ which tells us the effect of the policy on wholesaler firms which make greater proportion of their sales to registered firms. Another coefficient of interest is $\delta$ which shows the effect on retailers. 
 
-\begin{table}[h]
+\begin{table}[t!]
 \footnotesize
 \caption{Triple Difference: Wholesalers/Retailers; Before/After;Sales
   to Registered Firms in real terms}

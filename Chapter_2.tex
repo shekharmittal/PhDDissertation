@@ -8,7 +8,7 @@ In this paper, we implement and evaluate an ML algorithm on the universe of tax 
 
 We overcome several non-standard facets of the data and of our problem. First, our dataset was not constructed for the purpose of labeling for an algorithm and is, therefore, not a representative sample of the population. In our case, a small fraction of all firms are inspected, those suspected by the tax authority, and so there is a problem of selective labels \cite{lakkaraju2017selective}. On top of that, the tax authority only records bogus firms that were inspected, caught and canceled, but not firms that were inspected and found to be legitimate. Therefore, we are unable to distinguish between firms that were inspected and found to be legitimate and firms that were never inspected. We refer to this problem as that of one-sided labels, since no firm can be definitively labeled as legitimate (see \cref{fig:onesidedlabel}). The unlabeled firms are (at least weakly) less likely to be bogus than those labeled bogus, and we leverage this difference in class distribution to train a classifier. Moreover, the authority has never identified all the bogus firms in the stock of existing VAT firms, so we want to predict the labels of all unlabeled firms. Therefore, a standard classification approach with a training set and out-of-sample prediction is not viable. We employ a form of cross-validation to use the entire dataset as a training set and make predictions on all firms in the dataset not known to be bogus.
 
-\begin{figure}[h]
+\begin{figure}[t]
   \includegraphics[width=.9\textwidth, page=5]{graphs/StylizedExample_New2.pdf}
   \caption{One sided labels}
   \label{fig:onesidedlabel}
@@ -54,14 +54,15 @@ population mapping \cite{deville2014dynamic}, migration and mobility \cite{lu201
 \label{sec:vat}
 VAT is an indirect tax charged at multiple stages of production (and distribution) with taxes paid on purchases (inputs) credited against taxes withheld on sales (output). Firms withhold taxes on sales (output tax) from which they deduct the taxes they have already paid on purchases (input credits), and finally remit the difference to the tax authority. Thus, unlike under a retail sales tax, the tax authority collects tax revenue throughout the production chain. The VAT system also requires both firms involved in a transaction to report it independently allowing the tax authority to verify sale declarations of the seller against buyer reports while inspecting returns, known as third party verification.\footnote{See \cite{ITD2005} for more details.\cite{mittal2017vat} further describes VAT compliance incentives, and evaluates a technology implementation intended to improve compliance in Delhi. }
 
-In \cref{fig:bogus-mechanism}, we illustrate a simple VAT chain assuming a uniform tax rate of 10\%. Firm A sells goods worth \$60 to firm C. Firm C sells it ahead to Firm D at a price of \$80. Firm D finally sells to an end customer at the price of \$90. In this example, the tax authority collects tax on \$90 of value added (\$9 of tax at tax rate 10\%). \$60 of the value add (\$6 tax) comes from firm A, \$20 of the value add (\$2 tax) comes from firm C, and \$10 of the value add (\$1 tax) comes from firm D. Third-party verification works in the following manner. All firms have to report transaction level information. Firm C wants to report that it made a purchase of \$60 from firm A as that report reduces the tax that it would have to remit to the tax authority. As a result, firm A would also have to declare the sale of \$60 and subsequently pay the tax on it. Similarly, firm D will make firm C report the sale of \$80.
-
-\begin{figure}
+\begin{figure}[t!]
 % \includegraphics[width=1\textwidth, page=2]{graphs/StylizedExample_New3.pdf}
   \includegraphics[width=1\textwidth]{graphs/VATExample.png}
   \caption{Stylized example illustrating a value added tax transaction chain}
   \label{fig:bogus-mechanism}
 \end{figure}
+
+In \cref{fig:bogus-mechanism}, we illustrate a simple VAT chain assuming a uniform tax rate of 10\%. Firm A sells goods worth \$60 to firm C. Firm C sells it ahead to Firm D at a price of \$80. Firm D finally sells to an end customer at the price of \$90. In this example, the tax authority collects tax on \$90 of value added (\$9 of tax at tax rate 10\%). \$60 of the value add (\$6 tax) comes from firm A, \$20 of the value add (\$2 tax) comes from firm C, and \$10 of the value add (\$1 tax) comes from firm D. Third-party verification works in the following manner. All firms have to report transaction level information. Firm C wants to report that it made a purchase of \$60 from firm A as that report reduces the tax that it would have to remit to the tax authority. As a result, firm A would also have to declare the sale of \$60 and subsequently pay the tax on it. Similarly, firm D will make firm C report the sale of \$80.
+
 However, genuine firms may want to bypass the constraints imposed by third-party verification by reporting fraudulent transactions with bogus firms. Given the attention that governments in emerging economies have begun to pay to ``ease of doing business'' norms, registering a firm is increasingly straightforward. These factors have led to the emergence of bogus firms. In \cref{sec:2-mechanism}, we explain the possible mechanism through which these bogus firms operate and lead to tax evasion.
 
 \section{A Mechanism of Bogus Firms}
@@ -72,8 +73,8 @@ Firm B then can sell the input credit it now has to firm A by showing a sale of 
 
 A few key observations need to be highlighted. First, firm A and firm D do not need to be in the same transaction chain. It is not necessary for the eventual chain of transactions to be circular. Firm C does not benefit from the bogus transactions and need not even know about them.\footnote{We include firm C to highlight that such transactions can co-exist around genuine transactions.} Second, bogus firm B can make sales to any firm which is in need of input credits. It does not necessarily need to make such sales to firm A which is at the beginning of the transaction chain. Third, we believe that once detected it is not complicated to verify that firm B is bogus. It is a fake firm which should not exist physically at the address submitted to the tax authority.\footnote{In subsequent field work we can test this assumption} Therefore, there is no need to rigorously analyze its business related paperwork (high effort) and a visit to the location (relatively low effort) should be sufficient. Finally, after identifying bogus firm B, the revenue can only be recovered if the authority pursues firm A and reverses the input credit that firm A has claimed. Any kind of a penalty only on firm B does not recoup the revenue loss. We now describe the design of our system.
 
-\begin{figure}[p]
-  \includegraphics[width=1\columnwidth, page=4]{graphs/StylizedExample_New2.pdf}
+\begin{figure}[t!]
+  \includegraphics[width=1\textwidth,page=4]{graphs/StylizedExample_New2.pdf}
   \caption{An example showing how bogus firms facilitate tax evasion}
   \label{fig:bogus-mechanism2}
   \floatfoot{\footnotesize Firm A and Firm D need not necessarily be in the same chain. Bogus firms can make sales to any firm which needs input credits.}
@@ -128,24 +129,22 @@ We define classes for all our observations in the following way. In our outcome 
 \label{subsubsec:multiple-time}
 For each firm, the class does not change over time - a firm does not start legitimate and become bogus, or the other way around. However, a firm is supposed to file a return every quarter. We use our classification of firms to classify all quarterly observations of that firm with the class of the firm: ``bogus'' or ``probably legit''. $y_{f,t}=y_f \in \{bogus,legit\}$.
 
-
-\subsection{Classifier}
-\label{subsec:classifier}
-
-\begin{figure}
-  \includegraphics[width=1\textwidth]{graphs/DifferentClassifiersPerformanceByInspectionGroup.png}
+\begin{figure}[t!]
+  \includegraphics[width=.6\textwidth]{graphs/DifferentClassifiersPerformanceByInspectionGroup.png}
   \caption{Comparison of Different Classifiers}
   \label{fig:differentclassifiers}
 \end{figure}
 
+\subsection{Classifier}
+\label{subsec:classifier}
 We use a Random Forest \cite{liaw2002classification} classifier with $n\_trees=200$,\\ $stopping\_rounds=2$, and $max\_tree\_depth=20$ (the maximum depth is rarely reached in practice since the tree bifurcation stops when too few classification examples are left in a leaf) in H2O python implementation \cite{h2o_Python_module}. We selected Random Forest for its ability to handle complex dependencies between features (since not all our features are independently predictive) and combine categorical variables together with continuous variables seamlessly. 
 
 We perform a comparison of the performance of different classifiers to see if our results are sensitive to the choice of classification algorithm. \Cref{fig:differentclassifiers} shows our results: a few  standard classification algorithms obtain similar performance. For the top 400, 800 or 1200 recommendations Random Forest performs best. The one algorithm which performs worse than others is Naive Bayes, which is unsurprising since many of the features we use are not independent and since the algorithm implementation we used also assumes Gaussian distribution for numerical features conditional on class \cite{h2o_NaiveBayes}, which does not hold with our numerical features.
 
 \subsection{Cross-Validated Predictions}
 \label{subsec:cvp}
-\begin{figure}
-  \includegraphics[width=1\columnwidth]{graphs/CrossValidatedPrediction.png}
+\begin{figure}[t!]
+  \includegraphics[width=0.8\textwidth]{graphs/CrossValidatedPrediction.png}
   \caption{Cross-validated prediction procedure}
   \label{fig:crossvalidation}
 \end{figure}
@@ -166,8 +165,8 @@ More than 8 folds would make for better predictions, but increase computational 
 \label{subsec:multi-period}
 Each firm operates and files returns every quarter, and so we have multiple observations for each firm $f$ - one for each quarter - with different feature values $\{(X_{f,t},y_f)\space | \space t \in Q(f)\}$. However, a firm is either bogus or not and this does not change with time, so predictions should be made for a firm, $\hat{y}_f$, not a firm in a specific quarter, $\hat{y}_{f,t}$. So we need to consider these different feature values but produce one prediction per firm. We do this in three steps. First, we train a single-period model on firm-quarter observations. Second, we use the single-period model to make predictions for all firm-quarter observations, $\{\hat{y}_{f,t}\}$. Third, we aggregate the firm-quarter predictions to the firm level to produce a single prediction per firm, $\hat{y}_f=Aggregate(\{\hat{y}_{f,t}\space|t \in Q(f)\})$ (see \cref{fig:aggregation}). For generality, we describe this situation as if we have full labels and separate $trainingSet$ and $testSet$, but we combine this approach with our approach for one-sided labels.
 
-\begin{figure}
-  \includegraphics[width=1\columnwidth]{graphs/MultiplePeriodPrediction.png}
+\begin{figure}[t!]
+  \includegraphics[width=0.8\textwidth]{graphs/MultiplePeriodPrediction.png}
   \caption{Generating firm level predictions from firm-quarter level data points}
   \label{fig:aggregation}
 \end{figure}
@@ -190,16 +189,8 @@ There are other approaches that can potentially address the multiple time period
 
 Our chosen approach is not specific to multiple time periods. It is applicable whenever there are several identical-format data points for each object of classification (the firm, in our case) but classification must be made at the object level. For example, different doctor visits per patient,  or fraud detection based on multiple online purchases by the same customer, or many monthly behaviors of the same object.
 
-\section{Evaluation of Performance}
-\label{sec:evaluation}
-\subsection{Top Recommendations}
-\label{subsec:top-recommendations}
-We are constrained by the number of firms the tax authorities can physically inspect, and so we aim to provide a ranked list of suspicious firms. Performance on other parts of the distribution has no real world implications. We rank our firms in descending order of model-predicted likelihood: $rank(f1) \leq rank(f2) \text{ iff } \hat{y}_{f1}\geq \hat{y}_{f2}\text{.  } rank(f) \in \mathbb{N}$. We take a few realistic numbers of top recommendations and check our model's success on those - of these top $N$ firms predicted to be bogus by our model, how many are known to be bogus? Formally, $\text{bogus in top N}=|\{f\space|\space rank(f)\le N,y_f=bogus\}|$. 
 
-Of our top 400 most suspicious firms, we find 75\% to be actually bogus. Of the next 400 - 12\% are actually bogus. Of the next 400 - 6\%, of the next 1300 - 3\%, and of the general population - a negligible fraction (see \cref{tab:AllTimeCVPerformance}). Our model finds more than 75\% of firms labeled ``bogus'' in the top 2,500 recommendations - less than 1\% of firms, which is very good performance. Moreover, recall that the ``probably legit'' firms in this dataset are not necessarily legitimate - they could be bogus unknown to us because they were not inspected - so these numbers for the true-bogus rate in $N$ inspections are underestimates. See \cref{fig:AllDataPerformanceTop1000} for more fine-grained results on the top 1000 recommendations.
-
-
-\begin{table}
+\begin{table}[t!]
   \begin{tabular}{lrrr}
   	\toprule
 	  {\small\textit{Inspection}}  & {\small\textit{Firms}}  &  {\small\textit{Total Bogus}}  &  {\small\textit{Bogus Firms}} \\
@@ -216,13 +207,22 @@ Of our top 400 most suspicious firms, we find 75\% to be actually bogus. Of the 
   \label{tab:AllTimeCVPerformance}
   \floatfoot{\footnotesize Using data from all time periods and cross-validated predictions.}
 \end{table}
+
+\section{Evaluation of Performance}
+\label{sec:evaluation}
+\subsection{Top Recommendations}
+\label{subsec:top-recommendations}
+We are constrained by the number of firms the tax authorities can physically inspect, and so we aim to provide a ranked list of suspicious firms. Performance on other parts of the distribution has no real world implications. We rank our firms in descending order of model-predicted likelihood: $rank(f1) \leq rank(f2) \text{ iff } \hat{y}_{f1}\geq \hat{y}_{f2}\text{.  } rank(f) \in \mathbb{N}$. We take a few realistic numbers of top recommendations and check our model's success on those - of these top $N$ firms predicted to be bogus by our model, how many are known to be bogus? Formally, $\text{bogus in top N}=|\{f\space|\space rank(f)\le N,y_f=bogus\}|$. 
+
+Of our top 400 most suspicious firms, we find 75\% to be actually bogus. Of the next 400 - 12\% are actually bogus. Of the next 400 - 6\%, of the next 1300 - 3\%, and of the general population - a negligible fraction (see \cref{tab:AllTimeCVPerformance}). Our model finds more than 75\% of firms labeled ``bogus'' in the top 2,500 recommendations - less than 1\% of firms, which is very good performance. Moreover, recall that the ``probably legit'' firms in this dataset are not necessarily legitimate - they could be bogus unknown to us because they were not inspected - so these numbers for the true-bogus rate in $N$ inspections are underestimates. See \cref{fig:AllDataPerformanceTop1000} for more fine-grained results on the top 1000 recommendations.
+
  
 \subsection{Top Recommendations - Maximizing Revenue}
 \label{subsec:top-recommendations-revenue}
 From tax authority's perspective, we want to maximize expected revenue captured, and not merely the likelihood of finding a bogus firm. Small firms will only account for a small amount of tax evaded, and larger bogus firms will account for a much larger amount.\footnote{More precisely, this is determined by the amount of tax input credits claimed, the \$40 in the stylized example above.} We would therefore want a different ranking, in descending order of expected recovered revenue and not of model-predicted likelihood of being bogus. We use the following procedure to make such recommendations.
 
-\begin{figure}
-  \includegraphics[width=0.5\textwidth]{graphs/PerformanceAllData_v2.png}
+\begin{figure}[t!]
+  \includegraphics[width=0.6\textwidth]{graphs/PerformanceAllData_v2.png}
   \caption{Model performance on top 1000 recommendations}
   \label{fig:AllDataPerformanceTop1000}
   \floatfoot{\footnotesize Using cross-validated predictions on all time periods. The x value is the rank N of suspicious firms and the y value is the number of firms out of those N that are bogus. The dashed y=x line indicates perfect performance, i.e. every firm inspected is bogus. Model performance is near-perfect for the first 250 predictions, then starts to level off.}  
@@ -231,16 +231,18 @@ First, calibrate the model, so its score is an unbiased estimate of the actual p
 
 Second, calculate expected revenue recaptured by taking the amount of input tax credits the suspicious firms claim (as depicted in \cref{fig:bogus-mechanism2}) as the lost revenue to be recaptured, and multiplying it by the calibrated model score as the probability of a firm being bogus: $ExpectedRevenue_f=\hat{y}_f\cdot InputCredits_f$. We then rank all firms in descending order of the expected revenue captured, and recommend the top ones. On our data the performance of this method in terms of revenue is comparable to the earlier described method and therefore we do not report the results.
 
-\subsection{Different Feature Sets}
-\label{subsec:feature-sets}
-We have constructed 3 distinct feature sets which we use together in our model: features constructed from the individual firm's returns ($Returns_{f,t}$), features constructed from the firm's dealer profile ($Profile_f$), and features constructed from the network of firms and their trading partners ($Transactions_{f,t}$). We now disaggregate those feature sets and evaluate the performance of the model with each possible combination of feature sets. See \cref{fig:AllDataPerformanceDifferentFeatureSets} for the results. There is a three-way tie between feature sets that contain $Profile_f$ and one other feature set, so that the addition of the third one makes no discernible difference.
 
-\begin{figure}
-  \includegraphics[width=0.4\textwidth]{graphs/PerformanceDifferentFeatureSets_v3.png}
+\begin{figure}[t]
+  \includegraphics[width=0.6\textwidth]{graphs/PerformanceDifferentFeatureSets_v3.png}
   \caption{Betas curves for different feature sets}
   \label{fig:AllDataPerformanceDifferentFeatureSets}
   \floatfoot{\footnotesize The beta curve is 1 minus the ROC curve. As we vary the classification threshold, the x value tracks the fraction of ``probably legit'' firms that will be insulted by getting inspected ($\beta_{bogus}$); the y value tracks the fraction of bogus firms that will be missed by being classified as legit ($\beta_{legit}$). A lower curve indicates better performance.}
 \end{figure}
+
+\subsection{Different Feature Sets}
+\label{subsec:feature-sets}
+We have constructed 3 distinct feature sets which we use together in our model: features constructed from the individual firm's returns ($Returns_{f,t}$), features constructed from the firm's dealer profile ($Profile_f$), and features constructed from the network of firms and their trading partners ($Transactions_{f,t}$). We now disaggregate those feature sets and evaluate the performance of the model with each possible combination of feature sets. See \cref{fig:AllDataPerformanceDifferentFeatureSets} for the results. There is a three-way tie between feature sets that contain $Profile_f$ and one other feature set, so that the addition of the third one makes no discernible difference.
+
 
 \subsection{Point In Time Simulation}
 \label{subsec:PITSimulation}
@@ -258,8 +260,8 @@ We build a model based on the state of knowledge and data at a certain point in 
 \]
 \[SimulationTestSet_T = \{(X_{f,t},y_f) | t\le T,max(Q(f)) \ge T\}\]
 
-\begin{figure}
-  \includegraphics[width=1\columnwidth]{graphs/PointInTimeModel.png}
+\begin{figure}[t!]
+  \includegraphics[width=0.8\textwidth]{graphs/PointInTimeModel.png}
   \caption{Illustration of point-in-time simulation at T=3}
   \label{fig:PointInTimeSchematic}
 \end{figure}
@@ -276,7 +278,10 @@ Results of point-in-time simulations for various times T are detailed in \cref{t
 
 The number of bogus firms caught and the revenue saved are also calculated per inspection, showing an excellent hit rate of about 1 in 3 and extremely high returns for the first 400 inspections.  In all, the top 400 recommendations catch between 20\% and 40\% of all known bogus firms operating at that time.
 
-\begin{table*}
+\scalebox{0.68}{
+\begin{threeparttable}
+  \centering
+ % \footnotesize
   \begin{tabular}{rrrrrrr}
   	\toprule
 	  &&& {\small \textit{Revenue Gained}}& {\small \textit{Revenue Gained}}&&{\small \textit{Revenue Lost}} \\
@@ -294,15 +299,17 @@ The number of bogus firms caught and the revenue saved are also calculated per i
   \end{tabular}
   \caption{Point-in-time simulation performance for the 1-400 inspection group}
   \label{tab:PointInTimeResults}
-  \floatfoot{\footnotesize Each row shows the impact of inspecting the top 400 firms by model score: the number of known bogus firms that would have been found, and the revenue saved. The last two columns show the total number of bogus firms left to be caught at that time T, and the future revenue lost due to their activity.}
-\end{table*}
+  \begin{tablenotes}[para,flushleft]
+    \footnotesize Each row shows the impact of inspecting the top 400 firms by model score: the number of known bogus firms that would have been found, and the revenue saved. The last two columns show the total number of bogus firms left to be caught at that time T, and the future revenue lost due to their activity.
+  \end{tablenotes}
+\end{threeparttable}}
 
 \subsubsection{Revenue Implications}
 \label{subsec:revenue-implications}
 Point-in-time simulation also enables us to see how much additional revenue could have been gained by correctly targeting a bogus firm. We now estimate this effect by taking the top 400 firms that our point-in-time model would have recommended for inspection, and collecting the potentially gained revenue due to earlier-than-actual inspections of those of them that were later discovered to be bogus. For example if in reality a bogus firm was caught by the tax authorities after quarter 4, but our model  would have recommended it for inspection in quarter 2, then the bogus firm would have been caught and its evasion in quarters 3 \& 4 prevented - which is the revenue gained. We estimate revenue savings in the order of several tens of thousands US\$ recovered per inspection of the 1-400 inspection group in the earlier and middle time periods. In later periods, bogus firms were not yet identified by the tax authorities in our data and so mechanically the numbers are lower (see the results in \cref{tab:PointInTimeResults}). 
 
-\begin{figure}
-  \includegraphics[width=0.4\textwidth]{graphs/PointInTimePerformanceAggregate.png}
+\begin{figure}[t!]
+  \includegraphics[width=0.8\textwidth]{graphs/PointInTimePerformanceAggregate.png}
   \caption{Point-in-time simulations performance}
   \label{fig:PointInTimePerformanceArea}
   \floatfoot{\footnotesize For a point in time simulation in time T (x axis), out of all the bogus firms still operating, the chart shows the number of bogus firms that fall in each inspection group.}
