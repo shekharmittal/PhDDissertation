@@ -32,7 +32,7 @@ The key contributions of our work are:
 \item A proposed mechanism through which bogus firms may operate in a low compliance, emerging economy.
 \end{compactitem}
 
-The remainder of this paper is structured as follows. In \cref{sec:literature} we review the relevant literature both in economics and machine learning. In \cref{sec:vat} we describe the basics of VAT functioning. In \cref{sec:mechanism} we propose the mechanism that we think is behind the existence of bogus firms. \Cref{sec:system-description} describes the classification system we construct. In \cref{sec:evaluation} we evaluate the performance of our system and present the results of our model. Finally, in \cref{sec:2-conclusion} we describe our future goals.
+The remainder of this paper is structured as follows. In \cref{sec:literature} we review the relevant literature both in economics and machine learning. In \cref{sec:vat} we describe the basics of VAT functioning. In \cref{sec:2-mechanism} we propose the mechanism that we think is behind the existence of bogus firms. \Cref{sec:system-description} describes the classification system we construct. In \cref{sec:evaluation} we evaluate the performance of our system and present the results of our model. Finally, in \cref{sec:2-conclusion} we describe our future goals.
 
 
 \section{Related Work}
@@ -57,16 +57,15 @@ VAT is an indirect tax charged at multiple stages of production (and distributio
 In \cref{fig:bogus-mechanism}, we illustrate a simple VAT chain assuming a uniform tax rate of 10\%. Firm A sells goods worth \$60 to firm C. Firm C sells it ahead to Firm D at a price of \$80. Firm D finally sells to an end customer at the price of \$90. In this example, the tax authority collects tax on \$90 of value added (\$9 of tax at tax rate 10\%). \$60 of the value add (\$6 tax) comes from firm A, \$20 of the value add (\$2 tax) comes from firm C, and \$10 of the value add (\$1 tax) comes from firm D. Third-party verification works in the following manner. All firms have to report transaction level information. Firm C wants to report that it made a purchase of \$60 from firm A as that report reduces the tax that it would have to remit to the tax authority. As a result, firm A would also have to declare the sale of \$60 and subsequently pay the tax on it. Similarly, firm D will make firm C report the sale of \$80.
 
 \begin{figure}
-%  \includegraphics[width=1\textwidth, page=2]{graphs/StylizedExample_New3.pdf}
-   \includegraphics[width=1\textwidth]{graphs/VATExample.png}
- 
+% \includegraphics[width=1\textwidth, page=2]{graphs/StylizedExample_New3.pdf}
+  \includegraphics[width=1\textwidth]{graphs/VATExample.png}
   \caption{Stylized example illustrating a value added tax transaction chain}
   \label{fig:bogus-mechanism}
 \end{figure}
-However, genuine firms may want to bypass the constraints imposed by third-party verification by reporting fraudulent transactions with bogus firms. Given the attention that governments in emerging economies have begun to pay to ``ease of doing business'' norms, registering a firm is increasingly straightforward. These factors have led to the emergence of bogus firms. In \cref{sec:mechanism}, we explain the possible mechanism through which these bogus firms operate and lead to tax evasion.
+However, genuine firms may want to bypass the constraints imposed by third-party verification by reporting fraudulent transactions with bogus firms. Given the attention that governments in emerging economies have begun to pay to ``ease of doing business'' norms, registering a firm is increasingly straightforward. These factors have led to the emergence of bogus firms. In \cref{sec:2-mechanism}, we explain the possible mechanism through which these bogus firms operate and lead to tax evasion.
 
 \section{A Mechanism of Bogus Firms}
-\label{sec:mechanism}
+\label{sec:2-mechanism}
 We now propose a mechanism that allows bogus firms to operate over multiple periods. In \cref{fig:bogus-mechanism2}, we build on the stylized example by introducing the bogus firm B. The new transactions take place only on paper (i.e. are fraudulent). The actual transfer of goods stays the same as described  in \cref{fig:bogus-mechanism}. Firm D diverts \$40 out of the \$90 business-to-customer sales that it was actually making to the final consumer to firm B and reports it as a business-to-business sale.\footnote{Firm B may make a side payment to firm D as a small kickback for violating the law by misreporting. }  Firm D can do this because it makes sales to final consumers who are not incentivized to provide reports of such transactions to the tax authority, and because this does not increase financial liability of firm D to the tax authority.  
 
 Firm B then can sell the input credit it now has to firm A by showing a sale of an amount weakly greater than \$40 to firm A. The value add of firm A is now \$19 instead of the true value which should be \$60.\footnote{Firm A will be willing to make significant payments to firm B as this reduces firm A's tax liability.} Value added by bogus firm B is \$1, and firm C and firm D have the same value added as earlier. The final value added in the system now is \$40 less relative to a fully compliant system. The surplus (tax evaded) can potentially be divided between the offending firms, i.e. A, B (bogus), and D.
@@ -134,7 +133,7 @@ For each firm, the class does not change over time - a firm does not start legit
 \label{subsec:classifier}
 
 \begin{figure}
-  \includegraphics[width=1\columnwidth, page=1]{graphs/DifferentClassifiersPerformanceByInspectionGroup.png}
+  \includegraphics[width=1\textwidth]{graphs/DifferentClassifiersPerformanceByInspectionGroup.png}
   \caption{Comparison of Different Classifiers}
   \label{fig:differentclassifiers}
 \end{figure}
