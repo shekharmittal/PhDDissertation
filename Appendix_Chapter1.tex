@@ -4,9 +4,9 @@
 %\counterwithin{figure}{section}
 %\counterwithin{table}{section}
 \section{Data Summary} \label[appendix]{sec:overall_analysis}
-\begin{figure}[H]
+\begin{figure}[ht]
 \includegraphics[width=.7\textwidth]{graphs/TotalVATDeposited_ALL_Real.pdf}
-\caption{Total VAT remitted (for all firms), in real terms}  
+\caption{Total VAT Remitted (For All Firms)}  
 \label{fig:vatdeposited-all}
 \floatfoot{\scriptsize The third party verification policy began at the beginning of year 3. VAT remitted increases from \rupee 106.33 billion in year 1 to \rupee 116.29 billion in year 5. This is an average annual growth rate of 1.8\% in real terms as compared to a real state level GDP growth rate of about 5.7\% (Source:\citep{delhihandbook2015}). The y axis is in billion rupees, where 1\$ roughly equals \rupee 65.Values have been adjusted to year 1 price terms.}
 \end{figure}
@@ -16,10 +16,10 @@ In this section, we describe the distribution of the firms registered in the Del
 
 \todo[inline,caption={Average Tax Deposited},color=green]{We should present average amount deposited in this graph. We decided not to do this.}
 
-\begin{figure}[h] 
+\begin{figure}[ht] 
 \centering
 \includegraphics[width=.7\textwidth]{graphs/TotalVATDeposited_TotalCount5_Real.pdf}
-\caption{Total VAT remitted (for firms that are present in all years)}
+\caption{Total VAT Remitted (For Firms That are Present in All Years)}
 \floatfoot{\scriptsize Total collection trends for firms that are present in all the years of our sample period. There are 148434 such firms. The y axis is in billion rupees, where 1\$ roughly equals \rupee 65. Values have been adjusted to year 1 price terms. VAT remitted increases from \rupee 102.02 billion in year 1 to \rupee 104.07 billion in year 5.}
 \label{fig:vatdeposited-alwayspresent}
 \end{figure}
@@ -28,11 +28,11 @@ The number of firms filing a return increases from 192,664 in year 1 to 271,090 
 (refer to \Cref{tbl:all-summary}). Note that the third party verification mechanism breaks down for inter-state sales since the transacting firm's returns are submitted to a different tax authority and to date there has been little coordination between different tax jurisdictions on such cross-checking.\footnote{The GST bill legislated
 by the central and state governments will unify the tax administration and make it much easier to cross-check inter-state transactions.} 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 \scriptsize
 \centering
 \includegraphics[width=.7\textwidth]{graphs/LorenzCurve_TaxYear1.pdf}
-\caption{Lorenz Curve for all firms in Tax Year 1}
+\caption{Lorenz Curve for All Firms in Tax Year 1}
 \label{fig:lorenzyear1}
 \floatfoot{Note: Only 50\% of firms deposit any taxes, and 5\% of firms provide 95\% of total collections. Lorenz curve for all the firms in year 1 of our dataset (returns collated at annual level).}
 \end{figure}
@@ -40,9 +40,10 @@ by the central and state governments will unify the tax administration and make 
 \todo[inline,caption={Thought}, color=green]{I guess if even before the policy 5\% of firms generated 95\% of the revenues, it's not so surprising that perhaps after policy the main increase comes from  them. Or perhaps we should say that even after policy we see that the tax base does not expand. \textbf{AM}: This true. I am not sure
 where we should say this }
 
-\begin{table}[h]
+\begin{table}[ht]
 \footnotesize
 %\scriptsize
+\scalebox{0.85}{
 \begin{threeparttable}
 \begin{tabular}{lcccccc}\\ 
 \hline \hline
@@ -59,18 +60,18 @@ Year & No. of Firms & VAT Remitted & \% Positive VAT  & \% Zero-Turnover  & \% I
 \scriptsize
 Summary of all the firms that filed a return in the given year. Column (3) shows total VAT collected by the tax authority from all firms in that year in million rupees, with \rupee 65 approximately equal to \$1. Column (4) shows percentage of firms that deposited a positive amount of VAT. Column (5) show percentage of firms which filed a return but declared a turnover of zero. Column (6) shows percentage of firms that had a non-zero turnover and entire sales were interstate. Column (7) shows percentage of firms who had a non-zero turnover and all sales were local. For example, in year 1, 31.26\% firms had only local sales, 9.03\% had only interstate sales, and 7.1\% had a turnover of 0. Therefore, roughly 53\% of the firms had a non-zero turnover and had declared both local as well as inter-state sales.
 \end{tablenotes}
-\caption{Summary stats: All firms}
+\caption{Summary Stats: All Firms}
 \label{tbl:all-summary}
-\end{threeparttable}
+\end{threeparttable}}
 \end{table}
 
 In \cref{fig:lorenzyear1,fig:lorenzyear5} we plot Lorenz curves for (a) total turnover, (b) VAT remitted, and (c) a dummy for any positive VAT remitted separately for year 1 and 5 of the study. Inequality in contributions is stark with the top 5\% of firms remitting roughly 95\% of the total VAT collected by the tax authority. The number of firms that remit any VAT is surprisingly low, with the number hovering around 50\% across the 5 years.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \scriptsize
 \centering
 \includegraphics[width=.7\textwidth]{graphs/LorenzCurve_TaxYear5.pdf}
-\caption{Lorenz Curve for all firms in Tax Year 5}
+\caption{Lorenz Curve for All Firms in Tax Year 5}
 \label{fig:lorenzyear5}
 \end{figure}
 
@@ -82,7 +83,7 @@ between 2.5 to 8.5\% across the 5 years. The percentage of firms doing only inte
 
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \footnotesize
 %\scriptsize
 \begin{threeparttable}
@@ -99,7 +100,7 @@ Year & VATDeposited & \% Positive VAT  & \% Zero-Turnover & \% Interstate & \% L
 \begin{tablenotes}[para,flushleft]
   Summary of firms that filed a return in all the 5 years for which we have the data (2010-11 to 2014-15). Number of such firms in our sample is 148434. Column (2) shows total VAT remitted by the tax authority from all firms in that year in million rupees, with \rupee 65 approximately equal to \$1. Column (3) shows percentage of firms that remitted a positive amount of VAT. Column (4) show percentage of firms which filed a return but declared a turnover of zero. Column (5) shows percentage of firms that had a non-zero turnover and entire sales were interstate. Column (6) shows percentage of firms who had a non-zero turnover and all sales were local. For example, in year 1, 30.76\% of the 148434 firms that are present in all the years of our sample, had only local sales, 6.97\% had only interstate sales, and 2.5\% had a turnover of 0. Therefore, roughly 60\% of the firms had a non-zero turnover and had declared both local as well as inter-state sales.
 \end{tablenotes}
-\caption{Summary stats: Always present firms}
+\caption{Summary stats: Always Present Firms}
 \label{tbl:always_summary}
 \end{threeparttable}
 \end{table}
@@ -111,15 +112,14 @@ Year & VATDeposited & \% Positive VAT  & \% Zero-Turnover & \% Interstate & \% L
 \section{Quarterly Results}
 \label[appendix]{sec:quarterlyresults}
 
-\begin{figure}[t] 
-\caption{Wholesalers vs Retailers: Quarterly trends (in real terms) with confidence intervals}
+\begin{figure}[ht] 
+\caption{Wholesalers vs Retailers: Quarterly Trends}
 \label{fig:group1-pretrends-quarterly}
 \centering
 \includegraphics[width=.8\textwidth]{graphs/MeanMoneyDeposited_quarterly_with_confidenceintervals_Real.pdf}
 \floatfoot{\footnotesize $N_W=11482$, $N_R=15337$. VAT remitted is in million rupees, with \rupee 65 approximately equal to \$1. VAT remitted has been inflation adjusted to Q1-2010-11 price levels. Sample smaller than the annual frequency sample because in year 1 and year 2 firms with turnover less than 5 million had to file at annual or semi-annual frequency.}
 \end{figure}
 
-\pagebreak
 \subsection{Quarterly Analysis Along with Falsification Test}
 \label[appendix]{subsec:falsification-test}
 In addition to the basic model explained in \cref{subsec:identification_model}, we carry out robustness check by the falsification test described below. In \cref{eq:basic}, we now add a $Pre_{it}$ dummy which is equal to 1 if the quarter is 7 or 8 i.e. just before the introduction of the third party verification policy. We also interact the $Pre_{it}$ dummy with $\mathbb{I}\{\text{Wholesaler}_{i}\}$ which is a dummy for the firm i being a wholesaler. The falsification test is provided by coefficient $\mu$ corresponding to the interaction between $Pre_{it}$ dummy and $\mathbb{I}\{\text{Wholesaler}_{i}\}$ dummy. The coefficient indicates whether, before the introduction of the policy, the outcome variable is evolving similarly between wholesalers and retailers during the 2 quarters before the introduction of the policy. Consistent with the quarterly event-study analysis (\cref{fig:eventstudy-figure-quarter}), the pre-policy effect on wholesalers is close to zero, precisely estimated,\footnote{The standard errors are smaller than those for $\gamma$ coefficient.} and statistically insignificant. Results shown in \cref{tbl:event-falsification-table}.
@@ -129,11 +129,12 @@ In addition to the basic model explained in \cref{subsec:identification_model}, 
   +\mu*Pre_{it}*\mathbb{I}\{\text{Wholesaler}_{i}\}+\epsilon_{it}
 \end{multline}
 
+\begin{table}[t]
 \scalebox{0.9}{
 \begin{threeparttable}
 \centering 
 \footnotesize
-\caption{Falsification test: Wholesalers and Retailers (Quarterly, in real terms)}
+\caption{Falsification Test: Wholesalers and Retailers (Quarterly)}
 \label{tbl:event-falsification-table}
  \begin{tabular}{lccccc} \hline \hline
      & (1) & (2) & (3) & (4) & (5)  \\
@@ -159,6 +160,7 @@ Number of Firms & 26,819 & 26,819 & 26,819 & 26,819 & 26,819 \\ \hline \hline
 \footnotesize Robust standard errors in parentheses, clustered at firm level. $N_W=11482$, $N_R=15337$. Monetary amounts are in million rupees, inflation adjusted to price levels of Q1 of 2010-11, with \rupee 65 approximately equal to \$1. Column (1) shows linear probability regression of the probability of remitting a positive amount. Column (2)-(4) respectively show regression of the mean VAT remitted by firms, of the input tax credit claimed by firms, and the output tax collected by firms. To address the concern that VAT remitted has a significant mass at zero, column(5) shows regression of the difference between output tax and input credit declared by firms. Dependent variables have been price adjusted in Q1 of 2010-11 terms. Row ``Mean Dep.Var.'' shows mean and standard errors for wholesalers in quarter 1. *** p$<$0.01, ** p$<$0.05, * p$<$0.1
 \end{tablenotes}
 \end{threeparttable}}
+\end{table}
 
 
 \pagebreak
@@ -166,7 +168,7 @@ Number of Firms & 26,819 & 26,819 & 26,819 & 26,819 & 26,819 \\ \hline \hline
 \section{Flexible DID Specifications}
 \label[appendix]{sec:eventstudy-analysis}
 
-\subsection{Econometric model of event study analysis}
+\subsection{Econometric Model of Event Study Analysis}
 \label[appendix]{subsec:eventstudy-econometrics}
 We can take advantage of the large N and moderate T dimensions in our data set to estimate richer treatment effect models. In particular, we can examine flexibly the differential evolution of outcomes between wholesalers and retailers over the entire time-period under study. In particular, we estimate \cref{eq:flex} as outlined in
 \cref{subsec:identification_model}. We normalize $\gamma_2$ in that equation ($\gamma_8$ for quarterly analysis) to zero so that the coefficients $\{\gamma_s\}_{s \in S }$ measure differential changes in the outcome and relative to the year (quarter) prior to the policy introduction.
@@ -178,7 +180,7 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
 %\pagebreak
 
 
-\begin{table}[h]
+\begin{table}[ht]
 \footnotesize
 \begin{threeparttable}
 \begin{tabular}{lllll} \hline \hline
@@ -194,7 +196,7 @@ Output Tax - Tax Credit & 0.56 & 0.54 & 0.56 & 0.69 \\ \hline
 \begin{tablenotes}[para,flushleft]
 To formally test the hypothesis that pre-policy trends between wholesalers and retailers are not different, we test the null hypothesis $\gamma_1=\gamma_2=..=\gamma_{l-1}=0$ where l denotes the time period in which the automatic third party verification policy was introduced. l is 3 in column (1) and (3), and 9 in column (2) and (4). Column (1) does the test for returns data at annual frequency, column (2) does the test for returns at quarterly frequency, and column (3) and (4) do the test for returns data at annual and quarterly frequency but only for firms in the top decile (of both retailers and wholesalers) of VAT remitted in year/quarter 1.
 \end{tablenotes}
-\caption{Pre-trend analysis: Wholesalers vs Retailers}
+\caption{Pre-trend Analysis: Wholesalers vs Retailers}
 \label{tbl:}
 \end{threeparttable}
 \end{table}
@@ -228,12 +230,12 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
    \label{fig:eventstudy-figure-annual-positivevat}
   }
 \floatfoot{\footnotesize Notes: Graphical event-study analysis of the effect of third party verification policy on wholesalers compared to retailers. Confidence intervals were constructed with heteroskedasticity-robust standard errors, clustered at the firm level. The coefficient for the year ``-1'' (i.e., the year prior the policy) was normalized to zero. The regressions include firm fixed effects and time effects. The x axis indicates time, with annual observations and zero indicates the first year of the third party verification policy. Confidence intervals at the 95\% level. $N_W=32979$, $N_R=19515$. Coefficients in panel (a), (b), (c) and (d) are in million rupees with dependent variables price adjusted to the first year levels. \rupee 65 approximately equal to \$1. Pretrends are not statistically significant. }
-\caption{Wholesalers vs Retailers: In Real Terms}
+\caption{Event Study: Wholesalers vs Retailers (Annual)}
 \label{fig:eventstudy-figure-annual}
 \end{figure}
 
 
-\subsection{Quarterly analysis}
+\subsection{Quarterly Analysis}
 \label[appendix]{subsec:eventstudy-quarter}
 
 \begin{figure}[H]
@@ -261,7 +263,7 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
    \label{fig:eventstudy-figure-quarter-positivevat}
   }
 \floatfoot{\footnotesize Notes: Graphical event-study analysis of the effect of third party verification policy on wholesalers compared to retailers. Confidence intervals were constructed with heteroskedasticity-robust standard errors, clustered at the firm level. The coefficient for the quarter ``-1'' (i.e., the quarter prior to the policy) was normalized to zero. The regressions include firm fixed effects and time effects. The x axis indicates time, with quarterly observations and zero indicates the first quarter of the third party verification policy. Confidence intervals at the 95\% level. $N_W=11482$, $N_R=15337$. Coefficients in panel (a), (b), (c) and (d) are in million rupees with dependent variables price adjusted to the first quarter of 2010 levels. \rupee 65 approximately equal to \$1. Pretrends are not statistically significant.}
-\caption{Wholesalers vs Retailers: In Real Terms}
+\caption{Event Study: Wholesalers vs Retailers (Quarterly)}
 \label{fig:eventstudy-figure-quarter}
 \end{figure}
 
@@ -321,7 +323,7 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
 \label[appendix]{sec:execution}
 %\setcounter{figure}{0}
 
-\subsection{Difference-in-difference-in-difference: Proportion registered sales}
+\subsection{DiDiD: Proportion Registered Sales}
 \label{subsec:ddd-rxprop}
 \begin{figure}[H]
 \centering
@@ -343,7 +345,7 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
   \includegraphics[width=55mm]{graphs/DDD_PositiveContribution.pdf}
   }
 \floatfoot{\footnotesize Notes: This figure plots the difference between wholesalers and retailers explained in \cref{eq:ddd}. The x axis indicates time, with quarterly observations and zero indicates the first quarter of the third party verification policy. Confidence intervals at the 95\% level. Number of retailers is 15337 and number of wholesalers is 11482. Coefficients in panel (a), (b), (c) and (d) are in million rupees, price adjusted to Q1 of 2010-11 levels. Pretrends are not statistically significant. }
-\caption{Wholesalers vs Retailers}
+\caption{DiDiD: Wholesalers vs Retailers}
 \label[appendix]{ddd-figure-quarter}
 \end{figure}
 
@@ -351,10 +353,10 @@ To formally test the hypothesis that pre-policy trends between wholesalers and r
 \subsection{Revisions}\label[appendix]{subsec:revisions}
 \todo[inline,caption={Aprajit: Revisions}, color=green]{The point of this section is to show that revision behavior post-policy is consistent with collusion on the part of retailers. At the moment we see (a) \# revisions go up immediately post-policy but then are down again by the end of the study and (b) the top percentile of wholesalers and retailers have about the same number of changes in revisions post policy as do the top 10\%.  The DID, however, shows that retailers revised their returns more than the wholesalers. Further, we see that these revisions were as likely to lead to decreases in tax liabilities as increases in tax liabilities for retailers (relative to wholesalers).}
 
-\begin{figure}[h] 
+\begin{figure}[ht] 
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/RevisionTrends_All.pdf}
-\caption{Mean revisions for all firms}
+\caption{Mean Revisions of All Firms}
 \label{fig:revision_all}
 \end{figure}
 
@@ -364,10 +366,10 @@ wholesalers. However, immediately after the introduction of the policy, the revi
 
 There seems to be size based variation in the revision trends as well. When we compare wholesalers and retailers, we see that the 99th percentile (in terms of VAT deposited) of both the wholesalers and retailers revise their returns at a greater frequency than the 90th percentile firms (refer to \cref{fig:revision_topdecile}). This again hints towards the increase in revisions being driven by the increased cost of compliance.
 
-\begin{figure}[h] 
+\begin{figure}[ht] 
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/RevisionsWholesSalerVsRetailerTopPercentile.pdf}
-\caption{Mean revisions of wholesalers and retailers}
+\caption{Mean Revisions of Wholesalers and Retailers}
 \floatfoot{Describing revision trends by percentile. Comparing the firms in the top percentile with the firms in the 90th percentile}
 \label{fig:revision_topdecile}
 \end{figure}
@@ -380,7 +382,7 @@ There seems to be size based variation in the revision trends as well. When we c
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/AvgMatch_Purchases_alltypes.pdf}
 \floatfoot{Firm level mean of purchases transactions matching with transactions declared by selling firms}
-\caption{Matching on the purchase side for all firms}
+\caption{Matching on the Purchase Side for All Firms}
 \label{fig:matching_purchases}
 \end{figure}
 
@@ -390,7 +392,7 @@ In \cref{fig:matching_purchases}, \cref{fig:matching_sales}, \cref{fig:matching_
 
 \begin{figure}[H] 
 \centering
-\caption{Matching on the sales side for all firms}
+\caption{Matching on the Sales Side for All Firms}
 \includegraphics[width=0.75\textwidth]{graphs/AvgMatch_Sales_alltypes.pdf}
 %\floatfoot{Firm level mean of sales transactions matching with transactions declared by buying firms}
 \label{fig:matching_sales}
@@ -404,7 +406,7 @@ We further narrow our analysis and consider the differences in amount. We try tw
 \begin{figure}[H] 
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/AvgMatch_trend_DiffLessThan1percent.pdf}
-\caption{Matching Analysis: Retailers Vs Wholesalers (Purchases)}
+\caption{Matching Analysis: Retailers Vs Wholesalers (Purchases, Top Percentile)}
 \floatfoot{Describing revision trends by percentile. Comparing the firms in the top percentile with the firms in the 90th percentile}
 \label{fig:matching_retailerswholesalers}
 \end{figure}
@@ -414,18 +416,18 @@ In \cref{fig:matching_retailerswholesalers} and \cref{fig:matching_retailerswhol
 \begin{figure}[H] 
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/SalesAvgMatch_trend_DiffLessThan1percent.pdf}
-\caption{Mean revisions of wholesalers and retailers}
+\caption{Matching Analysis: Retailers Vs Wholesalers (Sales, Top Percentile)}
 \floatfoot{Describing revision trends by percentile. Comparing the firms in the top percentile with the firms in the 90th percentile}
 \label{fig:matching_retailerswholesalers_sales}
 \end{figure}
 \pagebreak
 
-\subsection{Consolidated vs transaction data}
+\subsection{Consolidated vs Transaction Data}
 \label[appendix]{subsec:consolidated_alignment}
 \begin{figure}[h] 
 \centering
 \includegraphics[width=0.75\textwidth]{graphs/TaxCreditComparison_allfirms_withoutq12.pdf}
-\caption{Consolidated vs transactional data}
+\caption{Consolidated vs Transactional Data}
 \floatfoot{In the first year, transaction data was not matched with the consolidated returns. Firms were clearly fudging, which was fixed in the subsequent years. We drop Q12 as unexplained behavior (possibly unrelated) is skewing the image.}
 \label{fig:consolidated_transaction_minusq12}
 \end{figure}

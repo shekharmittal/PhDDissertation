@@ -117,7 +117,7 @@ Actual columns indicate the true values of sales or purchases. Reported columns 
 Continuing with the example as above we can consider three different scenarios depending upon whether M and R collude.  First, we assume that there is no collusion between R and M and R reports sales truth-fully. In this case, R sells output to final consumers for \$72 collecting \$7.2 in taxes of which \$6 are off-set by his input tax credit so that \$1.2 is remitted to the authority. Second, consider the case where R and M do not collude but R decides unilaterally to under-report sales to C since such sales are not subject to third-party verification. In this scenario, R can in principle report any amount of sales to C but perhaps recognizing that zero (or negative) value-added in the final step may invite further scrutiny, will report the smallest amount about \$60 he is comfortable with to the tax authority. Third, M and R have incentives to collude so that the entire transaction can be carried out without involving another party U. In particular, M and R can agree to make \$60 worth of transactions on-the-books and remaining \$60 off-the-books.
 
 \begin{figure}[t] 
-\caption{Third party verification}
+\caption{Third Party Verification}
 \label{fig:matching_model}
 %\centering
 \includegraphics[width=.9\textwidth]{graphs/example_5.png}
@@ -217,7 +217,7 @@ Our main sample comprises of 32,979 retailers and 19,515 wholesalers who file a 
 \footnotesize  
 %\scriptsize  
 \begin{threeparttable}
-\caption{Summary Statistics: Retailer and Wholesaler Sample (Real terms)}
+\caption{Summary Statistics: Retailer and Wholesaler Sample}
 \begin{tabular}{lHccHcc} \hline \hline
  &&(1)&(2)&&(3)&(4)\\
 Variables & &Retailers & Diff & & Wholesalers & Diff  \\ \hline
@@ -253,7 +253,7 @@ As mentioned earlier, these two groups account for a substantial part of VAT col
 
 
 \begin{figure}[t] 
-\caption{Wholesalers vs Retailers: Annual trends (in real terms) with confidence intervals}
+\caption{Wholesalers vs Retailers: Annual Trends}
 \label{fig:group1-pretrends}
 %\centering
 \includegraphics[width=.8\textwidth]{graphs/MeanMoneyDeposited_annual_with_confidenceintervals_Real.pdf}
@@ -310,7 +310,7 @@ As a robustness check, \cref{tbl:event-falsification-table} repeats the regressi
 \begin{figure}[t] 
 %\centering
 \includegraphics[width=0.8\textwidth]{graphs/MoneyDepositedTrendsTopPercentilePanel_Annual_Real.pdf}
-\caption{Tax Remitted by top percentile and bottom 99\% of firms}
+\caption{Tax Remitted by Top Percentile and Bottom 99\% of Firms}
 \label{fig:money-onepercentile}
 \floatfoot{\footnotesize Notes: This figure plots the total VAT remitted by the panel of top 1\% and the bottom 99\%, in terms of VAT remitted in year 1, of wholesalers and retailers. $N_W=19515,N_R=32979$. Therefore, top 1\% of retailers are 329 firms and top 1\% of wholesalers are 195 firms. Rest of the firms form bottom 99\%. Monetary amounts are in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1.}
 \end{figure}
@@ -324,7 +324,7 @@ We next turn to exploring heterogeneity in our estimates. There are two main rea
 \footnotesize
 \scalebox{0.9}{
 \begin{threeparttable}
-\caption{Diff-in-Diff: Wholesalers and Retailers (Annual, Real Terms, Top Percentile)}
+\caption{Diff-in-Diff: Wholesalers and Retailers (Annual, Top Percentile)}
 \begin{tabular}{llHllll} \hline
   \hline
  & (1) & (2) & (2) & (3) & (4) & (5)\\
@@ -353,7 +353,7 @@ We begin by examining the evolution of tax remitted for different sub-groups of 
 \footnotesize
 \scalebox{0.9}{
 \begin{threeparttable}
-\caption{Diff-in-Diff: Wholesalers and Retailers (Annual, Real Terms, Bottom 99 Percentile)}
+\caption{Diff-in-Diff: Wholesalers and Retailers (Annual, Bottom 99 Percentile)}
 \begin{tabular}{llHllll} \hline
   \hline
  & (1) & (2) & (2) & (3) & (4) & (5)\\
@@ -410,28 +410,30 @@ There are at least two possible reasons for the differential effects on the larg
 \todo[inline, caption={Do better analysis on KCS}, color=green]{Revenue and administrative efficacy of KCS. Do whatever you can think of.}
 
 \begin{table}[t!]
-\footnotesize
-\begin{threeparttable}
-\caption{Diff-in-Diff for Top Decile: Wholesalers and Retailers (Annual, Real Terms)}
-\begin{tabular}{lcHcccc} \hline \hline
-  & (1) & (2) & (2) & (3) & (4) & (5) \\
- VARIABLES & Positive VAT  & VAT Remitted$>$ & VAT Deposited & Tax Credit & Output Tax & Output Tax -\\
- & Remitted Firms & Previous Year &  &  & & Input Credit \\ \hline
- Post*Wholesaler & 0.02*** & 0.04** & 3.38** & -1.77 & 1.68 & 3.46** \\
- & (0.01) & (0.02) & (1.38) & (1.43) & (1.04) & (1.42) \\
-Post & -0.06*** & 0.01 & -1.11** & 1.00** & -0.21 & -1.20*** \\
- & (0.00) & (0.01) & (0.47) & (0.42) & (0.39) & (0.45) \\ \hline
-Mean Dep.Var. &1 & & 12.65 & 6.98 & 19.73& 12.75  \\
-&(.00)&&(1.97)&(2.40)& (4.04)&(1.95) \\ \hline
-Observations & 26,240 & 20,992 & 26,240 & 26,240 & 26,240 & 26,240 \\
-R-squared & 0.41 & 0.28 & 0.89 & 0.84 & 0.97 & 0.89 \\
-Number of Firms & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 \\ \hline \hline
-\end{tabular}
-\begin{tablenotes}[para,flushleft]
-\Cref{eq:basic} results of the effect of third party verification policy on wholesalers compared to retailers. Limiting the set of wholesalers and retailers to the top 10\% of each group in terms of VAT remitted in year 1. Robust standard errors in parentheses, clustered at firm level. Number of wholesalers is 1951 and number of retailers is 3297. Monetary amounts are in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1. Column (1) shows linear probability regressions of the probability of remitting a positive amount of VAT. Column (2)-(4) respectively show regression of the mean VAT remitted by firms, of the input tax credit claimed by firms, and the output tax collected by firms. *** p$<$0.01, ** p$<$0.05, * p$<$0.1.
-\end{tablenotes}
-\label{tbl:group1-decile}
-\end{threeparttable}
+    \footnotesize
+    \scalebox{0.95}{
+        \begin{threeparttable}
+            \caption{Diff-in-Diff for Top Decile: Wholesalers and Retailers (Annual)}
+            \begin{tabular}{lcHcccc} \hline \hline
+                  & (1) & (2) & (2) & (3) & (4) & (5) \\
+                 VARIABLES & Positive VAT  & VAT Remitted$>$ & VAT Deposited & Tax Credit & Output Tax & Output Tax -\\
+                 & Remitted Firms & Previous Year &  &  & & Input Credit \\ \hline
+                 Post*Wholesaler & 0.02*** & 0.04** & 3.38** & -1.77 & 1.68 & 3.46** \\
+                 & (0.01) & (0.02) & (1.38) & (1.43) & (1.04) & (1.42) \\
+                Post & -0.06*** & 0.01 & -1.11** & 1.00** & -0.21 & -1.20*** \\
+                 & (0.00) & (0.01) & (0.47) & (0.42) & (0.39) & (0.45) \\ \hline
+                Mean Dep.Var. &1 & & 12.65 & 6.98 & 19.73& 12.75  \\
+                &(.00)&&(1.97)&(2.40)& (4.04)&(1.95) \\ \hline
+                Observations & 26,240 & 20,992 & 26,240 & 26,240 & 26,240 & 26,240 \\
+                R-squared & 0.41 & 0.28 & 0.89 & 0.84 & 0.97 & 0.89 \\
+                Number of Firms & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 \\ \hline \hline
+            \end{tabular}
+            \begin{tablenotes}[para,flushleft]
+            \Cref{eq:basic} results of the effect of third party verification policy on wholesalers compared to retailers. Limiting the set of wholesalers and retailers to the top 10\% of each group in terms of VAT remitted in year 1. Robust standard errors in parentheses, clustered at firm level. Number of wholesalers is 1951 and number of retailers is 3297. Monetary amounts are in million rupees, inflation adjusted to 2010-11 price levels, with \rupee 65 approximately equal to \$1. Column (1) shows linear probability regressions of the probability of remitting a positive amount of VAT. Column (2)-(4) respectively show regression of the mean VAT remitted by firms, of the input tax credit claimed by firms, and the output tax collected by firms. *** p$<$0.01, ** p$<$0.05, * p$<$0.1.
+            \end{tablenotes}
+            \label{tbl:group1-decile}
+        \end{threeparttable}
+    }
 \end{table}
 
 \section{Mechanism}\label{sec:1-mechanism}
@@ -440,7 +442,7 @@ Number of Firms & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 & 5,248 \\ \hline \hline
 \begin{figure}[t!] 
 %\centering
 \includegraphics{graphs/ProportionSalesRegistered.pdf}
-\caption{Sales to registered firms}
+\caption{Sales to Registered Firms}
 \floatfoot{\footnotesize Proportion of total sales made to registered firms for wholesale and retail firms.}
 \label{fig:salesregistered}
 \end{figure}
@@ -455,7 +457,7 @@ In this section we explore potential mechanisms for the reduced form results abo
 \begin{figure}[t!] 
 %\centering
 \includegraphics{graphs/ProportionSalesRegisteredTopPercentile_v2_without12.pdf}
-\caption{Sales to registered firms}
+\caption{Top Percentile: Sales to Registered Firms}
 \floatfoot{\footnotesize Describing the proportion of sales made to registered firms. Comparing the declarations by top percentile of wholesalers and retailers with the 90th percentile.}
 \label{fig:sales_registered_percentile}
 \end{figure}
@@ -483,9 +485,8 @@ In \cref{eq:ddd}, in addition to what we have already described for \cref{eq:bas
 
 \begin{table}[t!]
 \footnotesize
-\caption{Triple Difference: Wholesalers/Retailers; Before/After;Sales
-  to Registered Firms in real terms}
-\scalebox{0.95}{
+\scalebox{0.8}{
+\caption{DiDiD: Wholesalers/Retailers; Before/After;Sales to Registered Firms}
 \begin{threeparttable}
 \begin{tabular}{llllll} \hline
 & (1) & (2) & (3) & (4) & (5) \\
