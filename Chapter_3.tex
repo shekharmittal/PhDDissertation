@@ -66,9 +66,9 @@ This change in policy allows us to pin-down that the bunching behavior that we o
 
 \subsection{Data}
 \label{subsec:3-data}
-We use the form 16 data described in \cref{sec:1-data} and \cref{subsec:1-data-returns} for our analysis. Since all thresholds of interest are defined on annual levels, if a firm is filing multiple returns in a given financial year, we aggregate the values at the financial year level. We have 5 years of tax returns from the state of Delhi, India from the fiscal year 2010-11 until the fiscal year 2014-15.
 
-\begin{figure}[t]
+
+\begin{figure}[ht!]
   \label{fig:Distribution_of_Firms}
   \caption{Distribution of Firms by Size in the Dataset}
   \includegraphics[width=1\textwidth]{graphs/TurnoverDistribution_Fraction_WeaklyPositive} 
@@ -77,6 +77,9 @@ We use the form 16 data described in \cref{sec:1-data} and \cref{subsec:1-data-r
 %\footnotesize Notes: The figure shows the (relatively smooth) distribution of the firms according to their revenue in our sample, combining the samples from each of the years in our analysis (fiscal years 2010/11-2014/15). The x-axis shows the reported firm revenue, while the y-axis shows the corresponding frequency of the firms with the reported revenue shown on the x-axis.
  % \end{tablenotes}
 \end{figure}
+
+We use the form 16 data described in \cref{sec:1-data} and \cref{subsec:1-data-returns} for our analysis. Since all thresholds of interest are defined on annual levels, if a firm is filing multiple returns in a given financial year, we aggregate the values at the financial year level. We have 5 years of tax returns from the state of Delhi, India from the fiscal year 2010-11 until the fiscal year 2014-15.
+
 
 \subsection{Bunching at Thresholds}
 \label{subsec:3-methodology-bunching}
@@ -164,28 +167,28 @@ where $n_j$ is the number of firms in the reporting category $j$ below a given t
 
 We then evaluate whether the implicit subsidies needed to equalize the revenue losses are lower than the likely compliance costs incurred by firms reporting and paying VAT at a certain level of frequency.
 
-\begin{figure}[t!]
+\begin{figure}[ht!]
   \centering
   \subfloat[Bunching in Year 1]{
-    \includegraphics[width=60mm]{graphs/BunchingYear1_1Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear1_1Million_Degree4_30000}
     \label{fig:LowestThreshold-A}
   }
   \subfloat[Bunching in Year 2]{
-    \includegraphics[width=60mm]{graphs/BunchingYear2_1Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear2_1Million_Degree4_30000}
     \label{fig:LowestThreshold-B}
   }
   \hspace{0mm}
   \subfloat[No Bunching in Year 3]{
-    \includegraphics[width=60mm]{graphs/BunchingYear3_1Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear3_1Million_Degree4_30000}
     \label{fig:LowestThreshold-C}
   }
   \subfloat[No Bunching in Year 4]{
-    \includegraphics[width=60mm]{graphs/BunchingYear4_1Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear4_1Million_Degree4_30000}
     \label{fig:LowestThreshold-D}
   }
   \hspace{0mm}
   \subfloat[No Bunching in Year 5]{   
-    \includegraphics[width=60mm]{graphs/BunchingYear5_1Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear5_1Million_Degree4_30000}
     \label{fig:LowestThreshold-E}
   }
   \caption{Firm Revenue Distribution at the Low Threshold}
@@ -204,28 +207,28 @@ This section discusses the results of estimating the excess bunching at each of 
 
 The low threshold, set at the revenue of \rupee1 million, was relevant for the size-dependent VAT filing policy in years 1 and 2 (2010-11 and 2011-12) and mandated the change of return filing from an annual to a bi-annual frequency. \Cref{fig:LowestThreshold-A,fig:LowestThreshold-B} show that such policy resulted in excess bunching at the threshold, with the bunching estimates of 0.5 for year 1, and 0.28 for year 2, respectively. In years 3, 4, and 5, the policy was discontinued, and all the firms around the threshold were required to file their VAT reports on a quarterly basis. As \cref{fig:LowestThreshold-C,fig:LowestThreshold-D,fig:LowestThreshold-E} illustrate, there was - in contrast to years 1 and 2 - no excess bunching around the low threshold in the later years.
 
-\begin{figure}[t!]
+\begin{figure}[ht!]
   \centering
   \subfloat[Bunching in Year 1]{
-    \includegraphics[width=60mm]{graphs/BunchingYear1_5Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear1_5Million_Degree4_30000}
     \label{fig:MiddleThreshold-A}
   }
   \subfloat[Bunching in Year 2]{
-    \includegraphics[width=60mm]{graphs/BunchingYear2_5Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear2_5Million_Degree4_30000}
     \label{fig:MiddleThreshold-B}
   }
   \hspace{0mm}
   \subfloat[No Bunching in Year 3]{
-    \includegraphics[width=60mm]{graphs/BunchingYear3_5Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear3_5Million_Degree4_30000}
     \label{fig:MiddleThreshold-C}
   }
   \subfloat[No Bunching in Year 4]{
-    \includegraphics[width=60mm]{graphs/BunchingYear4_5Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear4_5Million_Degree4_30000}
     \label{fig:MiddleThreshold-D}
   }
   \hspace{0mm}
   \subfloat[No Bunching in Year 5]{   
-    \includegraphics[width=60mm]{graphs/BunchingYear5_5Million_Degree4_30000}
+    \includegraphics[width=55mm]{graphs/BunchingYear5_5Million_Degree4_30000}
     \label{fig:MiddleThreshold-E}
   }
   \caption{Firm Revenue Distribution at the Middle Threshold}
@@ -235,28 +238,28 @@ The low threshold, set at the revenue of \rupee1 million, was relevant for the s
 
 The middle threshold, set at the revenue of \rupee5 million, mandated the change of return filing from a bi-annual to a quarterly frequency in years 1 and 2 (2010-11 and 2011-12). Instead of filing the VAT returns twice a year, firms with the reported revenue above \rupee5 million in the previous year were required to file their reports four times a year. \Cref{fig:MiddleThreshold-A,fig:MiddleThreshold-B} show that such a size-dependent policy resulted in a significant bunching, with bunching estimates equaling 0.34 and 0.43, for years 1 and 2, respectively. \Cref{fig:MiddleThreshold-C,fig:MiddleThreshold-D,fig:MiddleThreshold-E} further show that such bunching disappears, with a much smoother distribution of reported firm revenues, once the threshold policy was done away with in years 3, 4, and 5.
 
-\begin{figure}[t!]
+\begin{figure}[ht!]
   \centering
   \subfloat[Bunching in Year 1]{
-    \includegraphics[width=60mm]{graphs/BunchingYear1_50Million_Degree4_3lac}
+    \includegraphics[width=55mm]{graphs/BunchingYear1_50Million_Degree4_3lac}
     \label{fig:HighestThreshold-A}
   }
   \subfloat[Bunching in Year 2]{
-    \includegraphics[width=60mm]{graphs/BunchingYear2_50Million_Degree4_3lac}
+    \includegraphics[width=55mm]{graphs/BunchingYear2_50Million_Degree4_3lac}
     \label{fig:HighestThreshold-B}
   }
  \hspace{0mm}
   \subfloat[Bunching in Year 3]{
-    \includegraphics[width=60mm]{graphs/BunchingYear3_50Million_Degree4_3lac}
+    \includegraphics[width=55mm]{graphs/BunchingYear3_50Million_Degree4_3lac}
     \label{fig:HighestThreshold-C}
   }
   \subfloat[No Bunching in Year 4]{
-    \includegraphics[width=60mm]{graphs/BunchingYear4_50Million_Degree4_3lac}
+    \includegraphics[width=55mm]{graphs/BunchingYear4_50Million_Degree4_3lac}
     \label{fig:HighestThreshold-D}
   }
   \hspace{0mm}
   \subfloat[No Bunching in Year 5]{   
-    \includegraphics[width=60mm]{graphs/BunchingYear5_50Million_Degree4_3lac}
+    \includegraphics[width=55mm]{graphs/BunchingYear5_50Million_Degree4_3lac}
     \label{fig:HighestThreshold-E}
     }
   \caption{Firm Revenue Distribution at the High Threshold}
@@ -266,16 +269,15 @@ The middle threshold, set at the revenue of \rupee5 million, mandated the change
 
 The highest threshold, set at the revenue of \rupee50 million, mandated the change of return filing from a quarterly frequency to a monthly frequency in years 1, 2, and 3 (2010-11 to 2012-13). In these years, the firms with the reported revenue greater than \rupee50 million, in the previous year, had to file VAT returns twelve times a year compared to firms just below the threshold, which had to file VAT returns four times a year. \Cref{fig:HighestThreshold-A,fig:HighestThreshold-B,fig:HighestThreshold-C} again indicate substantial bunching due to such filing threshold, with bunching estimates equaling 2.6, 2.98, and 1.87, in years 1, 2, and 3, respectively. \Cref{fig:HighestThreshold-D,fig:HighestThreshold-E} show that after the threshold policy was done away with in years 4 and 5 - with all firms now filing the VAT reports on a quarterly basis - the distribution of reported revenues becomes much smoother, with no bunching at the relevant threshold of \rupee50 million. This indicates that the observed bunching indeed occurs due to the filing policy.
 
-\begin{figure}[t]
+Within each of the thresholds, we see that the bunching occurs at approximately the same magnitude. For the low threshold, we see a decrease of bunching in the second year; for the middle threshold, we see a slight increase in the second year bunching; for the high threshold, we see an increase in bunching from year 1 to 2, followed by a decrease in bunching in year 3. Assuming that the level of bunching is a proxy for actual compliance costs incurred by firms, \cref{fig:ComplianceCosts} uses these bunching estimates to track the compliance costs across different revenue sizes and plots the bunching estimates on the y-axis versus the revenue sizes for the relevant thresholds on the x-axis. While compliance costs seem to remain more or less at the same level across the low and middle threshold, we see a sharp increase in the apparent compliance costs at the high threshold. This implies that compliance costs of a differential VAT reporting policy are generally increasing with the reported revenue.
+
+\begin{figure}[ht!]
   \caption{Distribution of Compliance Costs by Revenue Size}
   \label{fig:ComplianceCosts}
   \includegraphics[width=0.8\textwidth]{graphs/BunchingEstimates} 
   \floatfoot{\footnotesize Notes: The figure shows the bunching estimates (on the y-axis) against the reported revenue at each of the thresholds, for which the bunching is estimated. The figure provides an indication of increasing compliance costs with the size of the reported revenue thresholds.}
 \end{figure}
 
-Within each of the thresholds, we see that the bunching occurs at approximately the same magnitude. For the low threshold, we see a decrease of bunching in the second year; for the middle threshold, we see a slight increase in the second year bunching; for the high
-threshold, we see an increase in bunching from year 1 to 2, followed by a decrease in bunching in year 3. Assuming that the level of bunching is a proxy for actual compliance costs incurred by firms, \cref{fig:ComplianceCosts} uses these bunching estimates to track the compliance costs across different revenue sizes and plots the bunching estimates on the y-axis versus the revenue sizes for the relevant thresholds on the x-axis. While compliance costs seem to remain more or less at the same level across the low and middle threshold, we see a sharp increase in the apparent compliance costs at the high threshold. This implies that compliance costs of a differential VAT reporting policy are generally increasing with the reported revenue.
-\todo[inline, caption={Possible explanation}]{We should try and explain this better by suggesting that increased scrutiny could be one factor driving this.}
 
 \subsection{VAT Revenue Loss to the Tax Authority}
 \label{subsec:3-results-revenue-loss}
