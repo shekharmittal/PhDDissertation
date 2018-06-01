@@ -461,6 +461,8 @@
          \header{Abstract of the \MakeUppercase{\@Thesisname}}\\[12pt]
          % 2016 Author name can no longer be in bold, or be larger
          % than surrounding text.
+         \\
+         \\
          {\@titlesize \@title}\\[12pt]
          \normalsize \normalfont by\\[12pt]
          {\@author} \\
